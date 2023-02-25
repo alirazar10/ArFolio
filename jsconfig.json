@@ -2,7 +2,13 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
-    }
-  }
+      "@/*": ["./src/*"],
+      "@components/*": ["./src/app/components/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@styles/*": ["./src/styles/*"],
+    },
+    "allowJs": true
+  },
+  "include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.css"],
+  "exclude": ["node_modules", "**/node_modules", "dist"]
 }
