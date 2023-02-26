@@ -8,8 +8,8 @@ export default function Works(){
             <h1 className="text-3xl font-bold text-primary-50 py-5 lg:py-10 text-left">Work Showcase</h1>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                 {
-                    projects.map(item=>(
-                        <div key={item} className="flex flex-col bg-secondary-500 p-4 group pt-6 shadow-primary hover:primary-lg border border-primary-700 hover:border-primary-400 rounded-xl ease-in-out  translate-y-0 hover:-translate-y-1.5 duration-300">
+                    projects.map((item,index)=>(
+                        <div key={index} className="flex flex-col bg-secondary-500 p-4 group pt-6 shadow-primary hover:primary-lg border border-primary-700 hover:border-primary-400 rounded-xl ease-in-out  translate-y-0 hover:-translate-y-1.5 duration-300">
                             <h2 className="text-primary-100 transition-all duration-300 group-hover:text-accent-500 font-bold py-3 text-2xl">{item.title}</h2>
                             <div className="h-full flex flex-col justify-between">
                             <p className="text-primary-100 text-sm lg:text-base  py-2 text-justify">{item.description}</p>

@@ -34,9 +34,9 @@ export default function Sidebar(){
                     <ul className="flex flex-col items-end justify-center text-right w-full gap-10">
                         {
                             MENU_ITEM.map(item=>(   
-                                <li key={item.value} className={`text-primary-50 text-xl font-light border-b-2 border-accent-600 rounded-l-md w-full cursor-pointer p-4 px-5 bg-dark-accent-500 hover:bg-secondary-600 h-[70px] mr-[-180px] hover:mr-[0px] duration-500`} > 
+                                <li key={item.value} className={`text-primary-50 text-xl font-light border-b-2 border-accent-600 rounded-l-md w-full cursor-pointer p-4 px-5 bg-dark-accent-500 hover:bg-secondary-600 h-[70px] mr-[-180px] hover:mr-[0px] transition-all duration-500`} > 
                                 <Link
-                                    className={`flex flex-row-reverse justify-between items-center   hover:text-accent-500  hover:font-bold`}
+                                    className={`flex flex-row-reverse justify-between items-center   hover:text-accent-500 transition-all duration-150  hover:font-bold`}
                                     to={item.value}
                                     spy={true}
                                     smooth={true}
@@ -64,9 +64,9 @@ export default function Sidebar(){
                             MENU_ITEM.map(item=>(
                                 <li key={item.value} 
                                 className={`text-sm lg:text-lg text-primary-50 border-b-2 hover:text-accent-500
-                                hover:font-bold border-accent-600 rounded-l-md w-full cursor-pointer p-2.5 px-5 bg-dark-accent-500 hover:bg-secondary-600`}> 
+                                hover:font-bold border-accent-600 rounded-l-md w-full cursor-pointer p-2.5 px-5 bg-dark-accent-500 hover:bg-secondary-600 transition-all duration-150`}> 
                                 <Link
-                                    className={`flex flex-row-reverse justify-between items-center   hover:text-accent-500  hover:font-bold`}
+                                    className={`flex flex-row-reverse justify-between items-center   hover:text-accent-500 transition-all duration-150  hover:font-bold`}
                                     to={item.value}
                                     spy={true}
                                     smooth={true}

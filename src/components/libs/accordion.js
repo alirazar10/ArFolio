@@ -10,14 +10,14 @@ export const Accordion = ({ items }) => {
   const [activeHeight, setActiveHeight] = useState(null);
 
   const toggleItem = (index) => {
-    //   console.log(index)
+    let height =  document.getElementById(index).firstChild.clientHeight
     if (index === activeIndex) {
       setActiveIndex(null);
-      setActiveHeight(0)
+      setActiveHeight(null)
     } else {
-      let height = document.getElementById(index).firstChild.clientHeight
       setActiveIndex(index);
-      setActiveHeight(`h-[${height}px]`)
+      setActiveHeight(height)
+      console.log(activeHeight, height)
     }
   };
 
@@ -45,10 +45,12 @@ export const Accordion = ({ items }) => {
             </div>
           </div>
           <div
-            className={`overflow-hidden transition-[height] ease-in-out duration-500 ${
-              activeIndex === index ? activeHeight : 'h-0'
+            className={`overflow-hidden ease-in-out transition-[height]  duration-500 ${
+              // activeIndex === index ? `h-[${activeHeight}]` : 'h-0'
+              ''
             }`}
             id={index}
+            style={ activeIndex === index ? {height: activeHeight+10 } : {height: 0}}
           >
             <div className="px-4 py-4 mt-2 bg-secondary-500 text-primary-100 text-sm lg:text-base  text-justify rounded-xl h-fit">
                 <p className='text-sm text-secondary-300 pb-3 flex items-center gap-2'> 
@@ -60,8 +62,8 @@ export const Accordion = ({ items }) => {
                 <p className='text-sm text-primary-100'> { item.description } </p>
                 <div className='flex gap-2 flex-wrap mt-2.5'>
                     {
-                        item.skills.map((skill)=>(
-                            <span key={skill} className='px-2.5 py-2 bg-primary-100 text-secondary-300 text-xs rounded-xl bg-opacity-20'>{skill}</span>
+                        item.skills.map((skill,index)=>(
+                            <span key={index} className='px-2.5 py-2 bg-primary-100 text-secondary-300 text-xs rounded-xl bg-opacity-20'>{skill}</span>
                         ))
                     }
                 </div>
