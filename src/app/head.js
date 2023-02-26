@@ -1,3 +1,5 @@
+"use client";
+
 import { hotjar } from 'react-hotjar'
 import { useEffect } from 'react'
 export default function Head() {
