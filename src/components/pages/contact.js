@@ -8,9 +8,9 @@ export default function Contact () {
         <div className="min-h-screen flex flex-col justify-center max-w-3xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
                 <div className="pr-4 ">
-                    <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-primary-50 py-2">Let's connect</h2>
+                    <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-primary-50 py-2">Let&lsquo;s connect</h2>
                     <p className="text-primary-100 text-justify text-sm lg:text-base leading-6">
-                        We're just a conversation away over a cup of coffee - my treat! Whether you have a proposal, a question, or just want to chat, feel free to drop me a line below or email me directly.  
+                        We&lsquo;re just a conversation away over a cup of coffee - my treat! Whether you have a proposal, a question, or just want to chat, feel free to drop me a line below or email me directly.  
                     </p>
                 </div>
                 <div>
@@ -70,7 +70,7 @@ export default function Contact () {
                 </div>
             </div>
             <div className="mt-10">
-                <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-primary-50 py-2">Let's stay connected!</h3>
+                <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-primary-50 py-2">Let&lsquo;s stay connected</h3>
                 <div>
                     <ul className="flex items-center gap-3 text-2xl text-primary-100">
                         <li className="text-primary-100 hover:text-accent-400">
