@@ -1,6 +1,6 @@
 'use client';
 
-import {MENU_ITEM} from "@utils/constants"
+import {MENU_ITEM} from "@/content/constants"
 import { useEffect, useState } from "react"
 import { IoMenu } from "react-icons/io5"
 import { MdMenuOpen } from "react-icons/md";
@@ -40,7 +40,7 @@ export default function Sidebar(){
                                     to={item.value}
                                     spy={true}
                                     smooth={true}
-                                    offset={-100}
+                                    offset={-10}
                                     duration={500}
                                     activeClass="text-accent-500 font-bold" // class added in global
                                 >
@@ -55,7 +55,7 @@ export default function Sidebar(){
                 </div>
             </div>
             {/* mobile menu */}
-            <div className={` ${open ? 'fixed top-0 bottom-0 z-30 left-0 right-0 h-screen w-screen opacity-30': 'hd'} `} onClick={handleMenu}></div>
+            <div className={` ${open ? 'fixed top-0 bottom-0 z-30 left-0 right-0 bg-primary-900 overflow-hidden h-screen w-screen opacity-50': 'hd'} `} onClick={handleMenu}></div>
                 
             <div className={`block lg:hidden min-h-0 fixed z-50 top-0 right-0 h-fit ease-in-out duration-300 ${open? 'translate-x-0 w-60 ': 'translate-x-full'}`} >
                 <div className={`flex w-full  mt-20`} onClick={handleMenu}>

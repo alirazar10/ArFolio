@@ -7,7 +7,7 @@ export default function layout ({children}){
         <div className="w-full min-h-screen " name="wrapper">
             <Header/>
             <Sidebar/>
-            <main className="min-h-0 bg-primary-500 h-full ">
+            <main className="min-h-0 bg-primary-500 h-full px-5">
                 {children}
             </main>  
             <Footer/>
