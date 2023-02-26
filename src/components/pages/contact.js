@@ -36,7 +36,7 @@ export default function Contact () {
                                     name="name"
                                     id="fname"
                                     autoComplete="given-name"
-                                    className="mt-1.5 p-2 block w-full rounded-md h-12 border-secondary-300 shadow-sm focus:border-primary-400 focus:ring-accent-500 sm:text-sm"
+                                    className="mt-1.5 p-2 block w-full rounded-md h-12 border-secondary-300 shadow-primary focus:border-primary-400 focus:ring-accent-500 sm:text-sm"
                                 />
                                 <ValidationError 
                                     prefix="Name" 
@@ -54,7 +54,7 @@ export default function Contact () {
                                     id="email"
                                     autoComplete="given-email"
                                     placeholder="you@example.com"
-                                    className="mt-1.5 p-2 block w-full rounded-md h-12 border-secondary-300 shadow-sm focus:border-primary-400 focus:ring-accent-500 sm:text-sm"
+                                    className="mt-1.5 p-2 block w-full rounded-md h-12 border-secondary-300 shadow-primary focus:border-primary-400 focus:ring-accent-500 sm:text-sm"
                                 />
                                 <ValidationError 
                                     prefix="Email" 
@@ -71,7 +71,7 @@ export default function Contact () {
                                         id="message"
                                         name="message"
                                         rows={4}
-                                        className="mt-1 p-2 block w-full rounded-md border-secondary-300 shadow-sm focus:border-primary-400 focus:ring-accent-500 sm:text-sm"
+                                        className="mt-1 p-2 block w-full rounded-md border-secondary-300 shadow-primary focus:border-primary-400 focus:ring-accent-500 sm:text-sm"
                                         placeholder=""
                                         defaultValue={''}
                                     />
