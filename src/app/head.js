@@ -2,9 +2,23 @@
 
 import { hotjar } from 'react-hotjar'
 import { useEffect } from 'react'
+import { initGA } from '@/utils/g-analytics';
+import { useRouter } from 'next/router';
+
 export default function Head() {
+  const router = useRouter()
   useEffect(() => {
     hotjar.initialize(3384548, 6)
+  }, [])
+
+
+  useEffect(() => {
+    initGA()
+    GAnalyticsPageView()
+    router.events.on('routeChangeComplete', logPageView)
+    return () => {
+      router.events.off('routeChangeComplete', logPageView)
+    }
   }, [])
 
   return (
