@@ -1,4 +1,10 @@
+import { hotjar } from 'react-hotjar'
+import { useEffect } from 'react'
 export default function Head() {
+  useEffect(() => {
+    hotjar.initialize(3384548, 6)
+  }, [])
+
   return (
     <>
       <title>Create Next App</title>
