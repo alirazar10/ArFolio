@@ -11,14 +11,14 @@ export default function Head() {
     hotjar.initialize(3384548, 6)
   }, [])
 
-  useEffect(() => {
-    initGA();
-    logPageView();
-    router.events.on('routeChangeComplete', logPageView);
-    return () => {
-      router.events.off('routeChangeComplete', logPageView);
-    };
-  }, [router.events]);
+  // useEffect(() => {
+  //   initGA();
+  //   logPageView();
+  //   router.events.on('routeChangeComplete', logPageView);
+  //   return () => {
+  //     router.events.off('routeChangeComplete', logPageView);
+  //   };
+  // }, [router.events]);
 
   return (
     <>
