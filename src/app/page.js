@@ -2,7 +2,7 @@
 import About from '@/components/pages/about'
 import Contact from '@/components/pages/contact'
 import Experience from '@/components/pages/experience'
-import HomePage from '@/components/pages/home-page'
+import HomePage from '@/components/pages/homePage'
 import Works from '@/components/pages/works'
 import { Montserrat } from '@next/font/google'
 

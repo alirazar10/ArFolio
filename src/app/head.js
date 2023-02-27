@@ -2,7 +2,7 @@
 
 import { hotjar } from 'react-hotjar'
 import { useEffect } from 'react'
-import { initGA,logPageView } from '@/utils/g-analytics';
+import { initGA,logPageView } from '@/utils/gAnalytics';
 import { useRouter } from 'next/navigation';
 
 export default function Head() {
@@ -11,14 +11,18 @@ export default function Head() {
     hotjar.initialize(3384548, 6)
   }, [])
 
-  // useEffect(() => {
-  //   initGA();
-  //   logPageView();
-  //   router.events.on('routeChangeComplete', logPageView);
-  //   return () => {
-  //     router.events.off('routeChangeComplete', logPageView);
-  //   };
-  // }, [router.events]);
+  useEffect(() => {
+    try {
+      initGA();
+    logPageView();
+    router.events.on('routeChangeComplete', logPageView);
+    return () => {
+      router.events.off('routeChangeComplete', logPageView);
+    };
+    } catch (error) {
+      
+    }
+  }, [router.events]);
 
   return (
     <>
