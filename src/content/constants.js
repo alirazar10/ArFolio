@@ -20,11 +20,19 @@ export const SOCIAL_LINKS = {
 
 export const skills = [
         {
+            "name": "JavaScript",
+            "rate": 5
+        },
+        {
+            "name": "React.js",
+            "rate": 4
+        },
+        {
             "name": "PHP v5+",
             "rate": 5
         },
         {
-            "name": "JavaScript",
+            "name": "Laravel",
             "rate": 5
         },
         {
@@ -44,17 +52,18 @@ export const skills = [
             "rate": 5
         },
         {
+            "name": "AJAX",
+            "rate": 5
+        },
+        {
+            "name": "JSON",
+            "rate": 5
+        },
+        {
             "name": "Python",
             "rate": 4
         },
-        {
-            "name": "React.js",
-            "rate": 4
-        },
-        {
-            "name": "Laravel",
-            "rate": 5
-        },
+        
         {
             "name": "Flask",
             "rate": 3
@@ -75,14 +84,7 @@ export const skills = [
             "name": "MS SQL Server",
             "rate": 3
         },
-        {
-            "name": "AJAX",
-            "rate": 5
-        },
-        {
-            "name": "JSON",
-            "rate": 5
-        },
+        
         {
             "name": "Windows OS",
             "rate": 5

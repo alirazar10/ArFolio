@@ -14,6 +14,7 @@ module.exports = {
           'primary': '0px 4px 4px rgba(0, 0, 0, 0.25)',
           'primary-lg': '10px 20px 8px rgba(0, 0, 0, 0.50)',
       },
+      backgroundImage: { 'background': "url('/assets/images/4E6A5969.jpeg')" },
       colors:{
         primary: "#0A192B",
         secondary: "#112240",

@@ -8,7 +8,7 @@ import { AiFillInstagram } from "react-icons/ai"
 export default function Header(){
     return (
         <div className=" h-[60px] text-center fixed z-20  top-0 left-0 right-20 lg:right-0">
-            <div className="flex justify-start lg:justify-center items-center h-full lg:mx-auto" name="social-media">
+            <header className="flex justify-start lg:justify-center items-center h-full lg:mx-auto" name="social-media">
                 <ul className="flex justify-start lg:justify-center items-center h-full gap-3 text-2xl px-4 text-accent-500 bg-secondary-500 bg-opacity-50 rounded-br-lg lg:rounded-b-xl">
                     <li className="text-accent-500 hover:text-accent-400 transition-all duration-150">
                         <a href={SOCIAL_LINKS.facebook.link }>
@@ -39,7 +39,7 @@ export default function Header(){
                         <ResumeIcon className="w-7 lg:w-8 text-accent-500 hover:text-accent-400" color={"#FF5722"}/>
                     </li>
                 </ul>
-            </div>
+            </header>
         </div>
     )
 }

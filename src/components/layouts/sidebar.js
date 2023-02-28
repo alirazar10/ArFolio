@@ -30,7 +30,7 @@ export default function Sidebar(){
         </div>
             {/* desktop menu */}
             <div className="hidden lg:flex min-h-0 h-full fixed right-0 top-0 bottom-0 lg:w-64 z-50">
-                <div className="flex w-full h-full">
+                <nav className="flex w-full h-full">
                     <ul className="flex flex-col items-end justify-center text-right w-full gap-10">
                         {
                             MENU_ITEM.map(item=>(   
@@ -52,13 +52,13 @@ export default function Sidebar(){
                         }
                         
                     </ul>
-                </div>
+                </nav>
             </div>
             {/* mobile menu */}
             <div className={` ${open ? 'fixed top-0 bottom-0 z-30 left-0 right-0 bg-primary-900 overflow-hidden h-screen w-screen opacity-50': 'hd'} `} onClick={handleMenu}></div>
                 
             <div className={`block lg:hidden min-h-0 fixed z-50 top-0 right-0 h-fit ease-in-out duration-300 ${open? 'translate-x-0 w-60 ': 'translate-x-full'}`} >
-                <div className={`flex w-full  mt-20`} onClick={handleMenu}>
+                <nav className={`flex w-full  mt-20`} onClick={handleMenu}>
                     <ul className="flex flex-col items-end justify-center text-right w-full gap-1 bg-dark-accent-500">
                         {
                             MENU_ITEM.map(item=>(
@@ -82,7 +82,7 @@ export default function Sidebar(){
                         }
                         
                     </ul>
-                </div>
+                </nav>
             </div>
         </>
     

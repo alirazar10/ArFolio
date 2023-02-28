@@ -10,32 +10,15 @@ const Skills = ({ skills }) => {
       <div className='flex flex-col  gap-1.5'>
         {leftColumn.map((skill) => (
           <div key={skill.name} className='flex flex-row-reverse justify-end items-center gap-1.5'>
-            <h3 className='text-[11px] lg:text-[13px] text-secondary-300 hover:text-secondary-200'>{skill.name}</h3>
-            <div className="flex items-center ">
-              {Array.from({ length: skill.rate }, (_, i) => (
-                <div
-                  key={i}
-                  className="h-1.5 w-1.5 rounded-full bg-secondary-200 mr-1"
-                ></div>
-              ))}
-              {Array.from(
-                { length: 5 - skill.rate },
-                (_, i) => (
-                  <div
-                    key={i}
-                    className="h-1.5 w-1.5  rounded-full bg-secondary-400 mr-1"
-                  ></div>
-                )
-              )}
-            </div>
+            <h3 className= {`text-[11px] lg:text-[13px] text-secondary-300 hover:text-secondary-200 ${skill.rate >= 4 ? 'font-bold' : null}`}>{skill.name}</h3>
           </div>
         ))}
       </div>
       <div className='flex flex-col  gap-1.5'>
         {rightColumn.map((skill) => (
           <div key={skill.name} className='flex flex-row-reverse justify-end items-center gap-1.5'>
-            <h3 className='text-xs lg:text-sm text-secondary-300'>{skill.name}</h3>
-            <div className="flex items-center">
+            <h3 className={`text-[11px] lg:text-[13px] text-secondary-300 hover:text-secondary-200 ${skill.rate >= 4 ? 'font-bold' : null}`}>{skill.name}</h3>
+            {/* <div className="flex items-center">
               {Array.from({ length: skill.rate }, (_, i) => (
                 <div
                   key={i}
@@ -51,7 +34,7 @@ const Skills = ({ skills }) => {
                   ></div>
                 )
               )}
-            </div>
+            </div> */}
           </div>
         ))}
       </div>
