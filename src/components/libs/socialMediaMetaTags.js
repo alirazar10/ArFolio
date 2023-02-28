@@ -1,6 +1,7 @@
 import { META_TAGS } from '@/content/metaTag'
 
 export default function SocialMediaMetaTags () {
+    const imageUrl = process.env.NEXT_PUBLIC_BASE_URL
     return (
         <>
             <title>I am {META_TAGS.title}</title>
@@ -10,8 +11,8 @@ export default function SocialMediaMetaTags () {
               {/* Facebook and linkedin */}
             <meta property={`og:title`} content={META_TAGS.facebook.title}/>
             <meta property={`og:description`} content={META_TAGS.facebook.description}/>
-            <meta property={`og:image`} content={META_TAGS.facebook.image}/>
-            <meta property={`og:url`} content={META_TAGS.facebook.url}/>
+            <meta property={`og:image`} content={imageUrl+META_TAGS.facebook.image}/>
+            <meta property={`og:url`} content={ META_TAGS.facebook.url}/>
             <meta property={`og:type`} content={`website`}/>
 
             {/* Twitter */}
@@ -20,7 +21,7 @@ export default function SocialMediaMetaTags () {
             <meta name="twitter:site" content={META_TAGS.twitter.site} />
             <meta name="twitter:title" content={META_TAGS.twitter.creator}/>
             <meta name="twitter:description" content={META_TAGS.twitter.card}/>
-            <meta name="twitter:image" content=""/>
+            <meta name="twitter:image" content={imageUrl+META_TAGS.twitter.image}/>
 
 
         </>
