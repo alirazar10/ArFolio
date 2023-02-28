@@ -5,7 +5,7 @@
        <loc>https://iamali.vercel.app/</loc>
        <lastmod>2023-03-01</lastmod>
      </url>
-     <url>
+     <!-- <url>
        <loc>https://iamali.vercel.app/#home</loc>
        <lastmod>2023-03-01</lastmod>
      </url>
@@ -24,6 +24,6 @@
      <url>
        <loc>https://iamali.vercel.app/#contact</loc>
        <lastmod>2023-03-01</lastmod>
-     </url>
+     </url> -->
    </urlset>
    </xml>
