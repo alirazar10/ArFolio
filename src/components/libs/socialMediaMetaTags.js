@@ -28,6 +28,8 @@ export default function SocialMediaMetaTags () {
             <meta name="twitter:description" content={META_TAGS.twitter.description}/>
             <meta name="twitter:image" content={baseUrl+META_TAGS.twitter.image.src}/>
             <meta name="google-site-verification" content="reqWSYtRisTcEA7GeQk74Ld6hEWvSN9apg9vrXghIWE" />
+            <meta name="googlebot" content="all" />
+            <meta name="robots" content="all" />
         </>
     )
 }
