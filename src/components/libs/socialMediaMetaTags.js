@@ -11,7 +11,7 @@ export default function SocialMediaMetaTags () {
               {/* Facebook and linkedin */}
             <meta property={`og:title`} content={META_TAGS.facebook.title}/>
             <meta property={`og:description`} content={META_TAGS.facebook.description}/>
-            <meta property={`og:image`} content={imageUrl+META_TAGS.facebook.image}/>
+            <meta property={`og:image`} content={META_TAGS.facebook.url+META_TAGS.facebook.image}/>
             <meta property={`og:url`} content={ META_TAGS.facebook.url}/>
             <meta property={`og:type`} content={`website`}/>
 
