@@ -2,11 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-  html, body, *{
-    font-family: 'Montserrat', sans-serif;
-
-}
+@layer base {
+  html,
+  body,
+  * {
+    font-family: "Montserrat", sans-serif;
+  }
 }
 .transition-height {
   transition-property: height;

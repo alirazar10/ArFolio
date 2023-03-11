@@ -1,0 +1,55 @@
+:root {
+  --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* Fade up */
+.fadeup-appear,
+.fadeup-enter {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 300ms var(--easing), transform 300ms var(--easing);
+}
+
+.fadeup-appear-active,
+.fadeup-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms var(--easing), transform 300ms var(--easing);
+}
+
+/* .fadeup-enter-done {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: opacity 300ms var(--easing), transform 300ms var(--easing);
+} */
+
+/* Fade down */
+.fadedown-appear,
+.fadedown-enter {
+  opacity: 0.01;
+  transform: translateY(-20px);
+  transition: opacity 00ms var(--easing), transform 500ms var(--easing);
+}
+
+.fadedown-appear-active,
+.fadedown-enter-active {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: opacity 500ms var(--easing), transform 500ms var(--easing);
+}
+
+/* Fade */
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms var(--easing);
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 500ms var(--easing);
+}

@@ -6,6 +6,7 @@
       "@components/*": ["./src/app/components/*"],
       "@utils/*": ["./src/utils/*"],
       "@styles/*": ["./src/styles/*"],
+      "@configs": ["/src/configs/*"]
     },
     "allowJs": true
   },

@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Skills = ({ skills }) => {
   const halfLength = Math.ceil(skills.length / 2);
   const leftColumn = skills.slice(0, halfLength);
@@ -7,17 +5,31 @@ const Skills = ({ skills }) => {
 
   return (
     <div className="grid grid-cols-2 gap-4">
-      <div className='flex flex-col  gap-1.5'>
+      <div className="flex flex-col  gap-1.5">
         {leftColumn.map((skill) => (
-          <div key={skill.name} className='flex flex-row-reverse justify-end items-center gap-1.5'>
-            <h3 className= {`text-[11px] lg:text-[13px] text-secondary-300 hover:text-secondary-200 ${skill.rate >= 4 ? 'font-bold' : null}`}>{skill.name}</h3>
+          <div
+            key={skill.name}
+            className="flex flex-row-reverse justify-end items-center gap-1.5"
+          >
+            <h3
+              className={`text-[11px] lg:text-[13px] text-secondary-200 hover:text-secondary-100`}
+            >
+              {skill.name}
+            </h3>
           </div>
         ))}
       </div>
-      <div className='flex flex-col  gap-1.5'>
+      <div className="flex flex-col  gap-1.5">
         {rightColumn.map((skill) => (
-          <div key={skill.name} className='flex flex-row-reverse justify-end items-center gap-1.5'>
-            <h3 className={`text-[11px] lg:text-[13px] text-secondary-300 hover:text-secondary-200 ${skill.rate >= 4 ? 'font-bold' : null}`}>{skill.name}</h3>
+          <div
+            key={skill.name}
+            className="flex flex-row-reverse justify-end items-center gap-1.5"
+          >
+            <h3
+              className={`text-[11px] lg:text-[13px] text-secondary-200 hover:text-secondary-100`}
+            >
+              {skill.name}
+            </h3>
             {/* <div className="flex items-center">
               {Array.from({ length: skill.rate }, (_, i) => (
                 <div

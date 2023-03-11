@@ -11,27 +11,27 @@ export default function Header(){
             <header className="flex justify-start lg:justify-center items-center h-full lg:mx-auto" name="social-media">
                 <ul className="flex justify-start lg:justify-center items-center h-full gap-3 text-2xl px-4 text-accent-500 bg-secondary-500 bg-opacity-50 rounded-br-lg lg:rounded-b-xl">
                     <li className="text-accent-500 hover:text-accent-400 transition-all duration-150">
-                        <a href={SOCIAL_LINKS.facebook.link }>
+                        <a href={SOCIAL_LINKS.facebook.link } target="_blank" rel="noreferrer">
                             <IoLogoFacebook className="text-2xl lg:text-3xl" />
                         </a>
                     </li>
                     <li className="text-accent-500 hover:text-accent-400 transition-all duration-150">
-                        <a href={SOCIAL_LINKS.github.link }>
+                        <a href={SOCIAL_LINKS.github.link } target="_blank" rel="noreferrer">
                             <IoLogoGithub  className="text-2xl lg:text-3xl"/>
                         </a>
                     </li>
                     <li className="text-accent-500 hover:text-accent-400 transition-all duration-150">
-                        <a href={SOCIAL_LINKS.linkedin.link }>
+                        <a href={SOCIAL_LINKS.linkedin.link } target="_blank" rel="noreferrer">
                             <IoLogoLinkedin  className="text-2xl lg:text-3xl" />
                         </a>
                     </li>
                     <li className="text-accent-500 hover:text-accent-400 transition-all duration-150">
-                        <a href={SOCIAL_LINKS.twitter.link }>
+                        <a href={SOCIAL_LINKS.twitter.link } target="_blank" rel="noreferrer">
                             <IoLogoTwitter className="text-3xl lg:text-4xl"/>
                         </a>
                     </li>
                     <li className="text-accent-500 hover:text-accent-400 transition-all duration-150">
-                        <a href={SOCIAL_LINKS.instagram.link }>
+                        <a href={SOCIAL_LINKS.instagram.link } target="_blank" rel="noreferrer">
                             <AiFillInstagram className="text-3xl lg:text-4xl"/>
                         </a>
                     </li>
