@@ -67,6 +67,7 @@ export default function HomePage() {
           offset={-100}
           duration={500}
           activeClass="text-accent-500 font-bold"
+          aria-label="Contact me link"
         >
           Contact Me
         </Link>
