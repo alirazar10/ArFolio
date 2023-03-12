@@ -54,7 +54,7 @@ export default function Contact() {
                   <input
                     type="text"
                     name="name"
-                    id="fname"
+                    id="name"
                     autoComplete="given-name"
                     className="mt-1.5 p-2 block w-full rounded-md h-12 border-secondary-300 shadow-primary focus:border-primary-400 focus:ring-accent-500 sm:text-sm"
                   />
@@ -87,7 +87,7 @@ export default function Contact() {
                 </div>
                 <div className="lg:col-span-2">
                   <label
-                    htmlFor="about"
+                    htmlFor="message"
                     className="block text-sm font-medium text-primary-50"
                   >
                     Message
