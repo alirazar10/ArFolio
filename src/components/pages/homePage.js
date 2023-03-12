@@ -61,6 +61,7 @@ export default function HomePage() {
       <div className="py-2 pt-5 my-3">
         <Link
           className="px-8 py-2 text-lg font-semibold outline outline-1 outline-primary-50 text-primary-50 hover:outline-accent-500 hover:text-accent-500 rounded-md"
+          href={"#contact"}
           to={"contact"}
           spy={true}
           smooth={true}
