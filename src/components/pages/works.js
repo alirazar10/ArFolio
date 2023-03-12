@@ -45,12 +45,12 @@ export default function Works() {
 
   return (
     <div className="h-full flex flex-col justify-start items-start w-full">
-      <h1
+      <h2
         ref={revealTitle}
         className="text-3xl font-bold text-primary-50 py-5 lg:py-10 text-left"
       >
         Work Showcase
-      </h1>
+      </h2>
       <div className="">
         <TransitionGroup
           component={"div"}
