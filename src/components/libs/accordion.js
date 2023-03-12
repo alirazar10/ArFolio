@@ -65,7 +65,9 @@ export const Accordion = ({ items }) => {
                 {item.link && (
                   <>
                     <MdOutlineOpenInNew size={20} className="text-primary-50" />{" "}
-                    <a href={item.link}>{item.link}</a>
+                    <a href={item.link} aria-label={"Website link"}>
+                      {item.link}
+                    </a>
                   </>
                 )}
               </p>
