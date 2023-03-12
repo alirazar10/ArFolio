@@ -97,7 +97,7 @@ export default function HomePage() {
           </div>
         </CSSTransition>
         {/* )} */}
-        <div className=" h-full lg:h-fit py-3  relative -mt-20 lg:mt-0 border border-primary-700 bg-secondary-500 lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:left-0 lg:right-auto flex flex-col justify-center items-center lg:items-start rounded-md bg-opacity-0">
+        <div className=" h-full lg:h-fit py-3  relative -mt-20 lg:mt-0 border lg:border-none border-primary-700 bg-secondary-500 lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:left-0 lg:right-auto flex flex-col justify-center items-center lg:items-start rounded-md bg-opacity-0">
           {show && (
             <TransitionGroup
               component={"div"}
