@@ -90,7 +90,7 @@ export default function HomePage() {
         >
           <div
             ref={heroImageRef}
-            className=" rounded-md lg:rounded-none  mx-auto lg:mx-0 lg:py-16  lg:h-full lg:w-[290px] overflow-hidden  relative  lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:right-0"
+            className="h-[160px] w-[150px] rounded-md lg:rounded-none  mx-auto lg:mx-0 lg:py-16  lg:h-full lg:w-[290px] overflow-hidden  relative  lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:right-0"
             style={{ transitionDelay: "2300px" }}
           >
             <div className="relative h-[160px] w-[150px] mx-auto lg:mx-0  lg:h-full lg:w-full border z-10 lg:z-0 border-accent-700 bg-background filter bg-primary-500  lg:bg-blend-luminosity bg-cover bg-center lg:opacity-20 lg:hover:opacity-60 transition-all duration-150 overflow-hidden "></div>

@@ -10,7 +10,7 @@ export default function SocialMediaMetaTags() {
         content="width=device-width, initial-scale=1 shrink-to-fit=no"
         name="viewport"
       />
-      <meta http-equiv="x-ua-compatible" content="ie=edge" />
+      <meta httpEquiv="x-ua-compatible" content="ie=edge" />
       <meta name="description" content={META_TAGS.description} />
       <meta
         name="google-site-verification"

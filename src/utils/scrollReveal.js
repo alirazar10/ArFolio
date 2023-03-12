@@ -1,7 +1,7 @@
-"use client";
-import ScrollReveal from "scrollreveal";
+// "use client";
+// import ScrollReveal from "scrollreveal";
 
-const isSSR = typeof window === "undefined";
-const sr = isSSR ? null : ScrollReveal();
+// const isSSR = typeof window === "undefined";
+// const sr = isSSR ? null : ScrollReveal();
 
-export default sr;
+// export default sr;
