@@ -27,7 +27,7 @@ export default function Contact() {
             <p className="text-primary-100 text-justify text-sm lg:text-base leading-6">
               We&lsquo;re just a conversation away over a cup of coffee - my
               treat! Whether you have a proposal, a question, or just want to
-              chat, feel free to drop me a line below or email me directly.
+              chat, feel free to drop me a line or email me directly.
             </p>
             <p className="flex items-center gap-2 my-5">
               <MdMail className="text-xl text-primary-50" />
