@@ -140,27 +140,42 @@ export default function Contact() {
           <div>
             <ul className="flex items-center gap-3 text-2xl text-primary-100">
               <li className="text-primary-100 hover:text-accent-400 transition-all duration-100">
-                <a href={SOCIAL_LINKS.facebook.link}>
+                <a
+                  href={SOCIAL_LINKS.facebook.link}
+                  aria-label={"My Facebook Account Link"}
+                >
                   <IoLogoFacebook className="text-2xl lg:text-3xl" />
                 </a>
               </li>
               <li className="text-primary-100 hover:text-accent-400 transition-all duration-100">
-                <a href={SOCIAL_LINKS.github.link}>
+                <a
+                  href={SOCIAL_LINKS.github.link}
+                  aria-label={"My GitHub Account Link"}
+                >
                   <IoLogoGithub className="text-2xl lg:text-3xl" />
                 </a>
               </li>
               <li className="text-primary-100 hover:text-accent-400 transition-all duration-100">
-                <a href={SOCIAL_LINKS.linkedin.link}>
+                <a
+                  href={SOCIAL_LINKS.linkedin.link}
+                  aria-label={"My LinkedIn Account Link"}
+                >
                   <IoLogoLinkedin className="text-2xl lg:text-3xl" />
                 </a>
               </li>
               <li className="text-primary-100 hover:text-accent-400 transition-all duration-100">
-                <a href={SOCIAL_LINKS.twitter.link}>
+                <a
+                  href={SOCIAL_LINKS.twitter.link}
+                  aria-label={"My Twitter Account Link"}
+                >
                   <IoLogoTwitter className="text-3xl lg:text-4xl" />
                 </a>
               </li>
               <li className="text-primary-100 hover:text-accent-400 transition-all duration-100">
-                <a href={SOCIAL_LINKS.instagram.link}>
+                <a
+                  href={SOCIAL_LINKS.instagram.link}
+                  aria-label={"My Instagram Account Link"}
+                >
                   <AiFillInstagram className="text-3xl lg:text-4xl" />
                 </a>
               </li>
