@@ -7,6 +7,8 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import "../../styles/transitionStyle.css";
 import { hero } from "@/content/hero-content";
 import ScrollRevealWrapper from "../libs/scrollRevealWrapper";
+import Image from "next/image";
+import myPic from "/public/assets/images/4E6A5969.jpeg";
 
 export default function HomePage() {
   const [show, setShow] = useState(false);
@@ -25,7 +27,7 @@ export default function HomePage() {
   const item1 = {
     ref: useRef(null),
     el: (
-      <h4 className="text-primary-50 text-base md:text-xl lg:text-2xl font-bold inline lg:block pr-2">
+      <h4 className="text-primary-50 text-sm md:text-xl lg:text-2xl font-bold inline lg:block pr-2">
         {hero.greeting}
       </h4>
     ),
@@ -33,7 +35,7 @@ export default function HomePage() {
   const item2 = {
     ref: useRef(null),
     el: (
-      <h2 className="text-accent-500 text-xl md:text-2xl lg:text-4xl font-bold inline lg:block mb-">
+      <h2 className="text-accent-500 text-2xl md:text-3xl lg:text-4xl font-bold inline lg:block mb-3">
         {hero.name}.
       </h2>
     ),
@@ -41,7 +43,7 @@ export default function HomePage() {
   const item3 = {
     ref: useRef(null),
     el: (
-      <h1 className="text-primary-100 text-base md:text-2xl lg:text-3xl font-bold mb-3">
+      <h1 className="text-primary-100 text-xl md:text-3xl lg:text-4xl font-bold mb-3 lg:leading-[2.8rem]">
         {hero.tagLine}
       </h1>
     ),
@@ -49,7 +51,7 @@ export default function HomePage() {
   const item4 = {
     ref: useRef(null),
     el: (
-      <p className="text-primary-100 text-sm lg:text-base italic py-2">
+      <p className="text-primary-100 text-sm lg:text-base italic py-2 leading-6 lg:leading-7">
         {hero.description}
       </p>
     ),
@@ -78,32 +80,42 @@ export default function HomePage() {
   const heroContent = [item1, item2, item3, item4, item5];
 
   return (
-    <div className="flex justify-center items-center w-full h-screen">
-      <div className="relative overflow-hidden rounded-md py-5 mt-20 lg:p-0 lg:m-0 w-full lg:h-full">
-        {/* {show && ( */}
-        <CSSTransition
-          in={true}
-          nodeRef={heroImageRef}
-          timeout={500}
-          classNames="fadedown"
-          appear
-          onEntered={handleEntered}
-          onExited={handleExited}
-        >
-          <div
-            ref={heroImageRef}
-            className="h-[160px] w-[150px] rounded-md lg:rounded-none  mx-auto lg:mx-0 lg:py-16  lg:h-full lg:w-[290px] overflow-hidden  relative  lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:right-0"
-            style={{ transitionDelay: "2300px" }}
+    <div className="w-full max-h-max">
+      <div className="overflow-hidden rounded-md py-5 w-full h-full">
+        {show && (
+          <CSSTransition
+            in={true}
+            nodeRef={heroImageRef}
+            timeout={2000}
+            classNames="fadedown"
+            appear
+            onEntered={handleEntered}
+            onExited={handleExited}
           >
-            <div className="relative h-[160px] w-[150px] mx-auto lg:mx-0  lg:h-full lg:w-full border z-10 lg:z-0 border-accent-700 bg-background filter bg-primary-500  lg:bg-blend-luminosity bg-cover bg-center lg:opacity-20 lg:hover:opacity-60 transition-all duration-150 overflow-hidden "></div>
-          </div>
-        </CSSTransition>
-        {/* )} */}
-        <div className=" h-full lg:h-fit py-3  relative -mt-20 lg:mt-0 border lg:border-none border-primary-700 bg-secondary-500 lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:left-0 lg:right-auto flex flex-col justify-center items-center lg:items-start rounded-md bg-opacity-0">
+            <div
+              ref={heroImageRef}
+              className="h-[160px] w-[150px] rounded-md  mx-auto lg:mx-0  lg:h-full lg:w-[35%] overflow-hidden  lg:absolute lg:top-0 lg:right-0 lg:bottom-0 "
+              style={{ transitionDelay: "300sm" }}
+            >
+              <div className="relative h-[160px] w-[150px] mx-auto lg:mx-0  lg:h-full lg:w-full border z-10 lg:z-0 border-accent-700 filter bg-primary-500  lg:bg-blend-luminosity bg-cover bg-center lg:opacity-20 lg:hover:opacity-60 transition-all duration-150 overflow-hidden ">
+                <Image
+                  src={myPic}
+                  alt="My pic"
+                  quality={80}
+                  className="object-center object-cover min-h-full"
+                  loading="lazy"
+                  blur={true}
+                  // priority="true"
+                />
+              </div>
+            </div>
+          </CSSTransition>
+        )}
+        <div className=" h-full lg:h-fit py-3  relative -mt-20 lg:mt-0 border lg:border-none border-primary-700 bg-secondary-500  flex flex-col justify-center items-center lg:items-start rounded-md bg-opacity-0 lg:max-w-[65%]">
           {show && (
             <TransitionGroup
               component={"div"}
-              className={`mx-2 px-2 py-5 pt-24 lg:p-2 lg:py-5  space-y-2 lg:pl-[7rems] text-center lg:text-left`}
+              className={`mx-2 px-2 py-5 pt-24 lg:p-2 lg:py-5  space-y-2  lg:text-left`}
             >
               {heroContent.map(({ ref, el }, index) => (
                 <CSSTransition
@@ -117,6 +129,7 @@ export default function HomePage() {
                   onExited={handleExited}
                 >
                   <div
+                    className={`${index < 2 ? "inline " : "lg:block"} `}
                     ref={ref}
                     style={{ transitionDelay: `${index + 1}00ms` }}
                   >

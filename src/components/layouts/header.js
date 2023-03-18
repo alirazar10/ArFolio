@@ -1,3 +1,4 @@
+"use client";
 import {
   IoLogoFacebook,
   IoLogoGithub,
@@ -5,15 +6,35 @@ import {
   IoLogoLinkedin,
   IoLogoTwitter,
 } from "react-icons/io5";
-import { MdMail } from "react-icons/md";
 import ResumeIcon from "@/assets/icons/resume-icon";
-import Image from "next/image";
 import { SOCIAL_LINKS } from "@/content/constants";
 import { AiFillInstagram } from "react-icons/ai";
+import { useEffect, useState } from "react";
 
 export default function Header() {
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollPos, setLastScrollPos] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      setShowHeader(lastScrollPos > currentScrollPos || currentScrollPos < 10);
+      setLastScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollPos]);
+
   return (
-    <div className=" h-[60px] text-center fixed z-20  top-0 left-0 right-20 lg:right-0">
+    <div
+      className={` h-[60px] text-center fixed z-20  top-0 left-0 right-20 lg:right-0 transition duration-[400ms] ease-in ${
+        showHeader ? "" : "transform -translate-y-full"
+      }`}
+    >
       <header
         className="flex justify-start lg:justify-center items-center h-full lg:mx-auto"
         name="social-media"

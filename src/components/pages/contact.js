@@ -17,14 +17,14 @@ export default function Contact() {
   const [state, handleSubmit] = useForm("xoqzwabz");
 
   return (
-    <div className="min-h-screen flex flex-col justify-center max-w-3xl mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+    <div className="flex flex-col justify-center w-full h-full mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-20 gap-y-5">
         <ScrollRevealWrapper>
           <div className="pr-4 ">
-            <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-primary-50 py-2">
+            <h2 className="text-xl md:text-3xl lg:text-4xl font-bold text-primary-50 py-2 lg:p-0 lg:leading-[2.8]">
               Let&lsquo;s connect
             </h2>
-            <p className="text-primary-100 text-justify text-sm lg:text-base leading-6">
+            <p className="text-primary-100 text-justify text-sm lg:text-base leading-6 lg:leading-7">
               We&lsquo;re just a conversation away over a cup of coffee - my
               treat! Whether you have a proposal, a question, or just want to
               chat, feel free to drop me a line or email me directly.
@@ -56,7 +56,7 @@ export default function Contact() {
                     name="name"
                     id="name"
                     autoComplete="given-name"
-                    className="mt-1.5 p-2 block w-full rounded-md h-12 border-secondary-300 shadow-primary focus:border-primary-400 focus:ring-accent-500 sm:text-sm"
+                    className="mt-1.5 p-2 block w-full rounded-md h-12 bg-secondary-100 border-secondary-300 shadow-primary focus:border-primary-400 focus:ring-accent-500 sm:text-sm"
                   />
                   <ValidationError
                     prefix="Name"
@@ -77,7 +77,7 @@ export default function Contact() {
                     id="email"
                     autoComplete="given-email"
                     placeholder="you@example.com"
-                    className="mt-1.5 p-2 block w-full rounded-md h-12 border-secondary-300 shadow-primary focus:border-primary-400 focus:ring-accent-500 sm:text-sm"
+                    className="mt-1.5 p-2 block w-full rounded-md h-12 bg-secondary-100 border-secondary-300 shadow-primary focus:border-primary-400 focus:ring-accent-500 sm:text-sm"
                   />
                   <ValidationError
                     prefix="Email"
@@ -97,7 +97,7 @@ export default function Contact() {
                       id="message"
                       name="message"
                       rows={4}
-                      className="mt-1 p-2 block w-full rounded-md border-secondary-300 shadow-primary focus:border-primary-400 focus:ring-accent-500 sm:text-sm"
+                      className="mt-1 p-2 block w-full rounded-md bg-secondary-100 border-secondary-300 shadow-primary focus:border-primary-400 focus:ring-accent-500 sm:text-sm"
                       placeholder=""
                       defaultValue={""}
                     />
@@ -132,8 +132,9 @@ export default function Contact() {
       </div>
       <div className="mt-10">
         <ScrollRevealWrapper>
-          <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-primary-50 py-2">
-            Let&lsquo;s stay connected
+          <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-primary-50 py-5">
+            {/* Let&lsquo;s stay connected  */}
+            Stay connected
           </h3>
         </ScrollRevealWrapper>
         <ScrollRevealWrapper options={{ delay: 600 }}>

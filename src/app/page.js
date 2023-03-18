@@ -9,7 +9,7 @@ export default function Home() {
       <section
         name="home"
         id="home"
-        className="min-h-screen xl:max-w-[992px] mx-auto"
+        className="min-h-screen xl:max-w-[992px] mx-auto flex items-center my-20 relative"
       >
         <Hero />
       </section>
@@ -22,7 +22,11 @@ export default function Home() {
       <section name="work" id="work" className="min-h-screen py-20">
         <Works />
       </section>
-      <section name="contact" id="contact" className="min-h-screen py-20">
+      <section
+        name="contact"
+        id="contact"
+        className="min-h-screen flex items-center py-20"
+      >
         <Contact />
       </section>
     </div>

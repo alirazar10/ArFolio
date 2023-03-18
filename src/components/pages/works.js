@@ -47,7 +47,7 @@ export default function Works() {
     <div className="h-full flex flex-col justify-start items-start w-full">
       <h2
         ref={revealTitle}
-        className="text-3xl font-bold text-primary-50 py-5 lg:py-10 text-left"
+        className="text-xl md:text-3xl lg:text-4xl font-bold text-primary-50 py-2 lg:p-0 lg:leading-[2.8]"
       >
         Work Showcase
       </h2>
