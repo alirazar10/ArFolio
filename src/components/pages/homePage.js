@@ -2,18 +2,19 @@
 
 import { hero } from "@/content/hero-content";
 import { heroImage } from "@/utils/cloudinary";
-import {
-  AdvancedImage,
-  accessibility,
-  lazyload,
-  placeholder,
-  responsive,
-} from "@cloudinary/react";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-scroll";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import "../../styles/transitionStyle.css";
 import { generateImageUrl } from "../libs/imageCreator";
+import Image from "next/image";
+// import {
+//   AdvancedImage,
+//   accessibility,
+//   lazyload,
+//   placeholder,
+//   responsive,
+// } from "@cloudinary/react";
 
 export default function HomePage() {
   const [show, setShow] = useState(false);
@@ -103,7 +104,7 @@ export default function HomePage() {
               style={{ transitionDelay: "300sm" }}
             >
               <div className="relative h-[160px] w-[150px] mx-auto lg:mx-0  lg:h-full lg:w-full border z-10 lg:z-0 border-accent-700 filter bg-primary-500  lg:bg-blend-luminosity bg-cover bg-center lg:opacity-20 lg:hover:opacity-60 transition-all duration-150 overflow-hidden ">
-                <AdvancedImage
+                {/* <AdvancedImage
                   cldImg={generateImageUrl(heroImage.imagePublicId)}
                   plugins={[
                     lazyload(),
@@ -113,6 +114,14 @@ export default function HomePage() {
                   ]}
                   className="object-center object-cover min-h-full h-full w-full"
                   alt="Hero section Image"
+                /> */}
+                <Image
+                  src={generateImageUrl(heroImage.imagePublicId).toURL()}
+                  width={1280}
+                  height={720}
+                  className="object-center object-cover min-h-full h-full w-full"
+                  alt="Hero section Image"
+                  priority={true}
                 />
               </div>
             </div>
