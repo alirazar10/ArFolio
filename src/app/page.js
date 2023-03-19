@@ -1,7 +1,4 @@
 import { About, Contact, Experience, Hero, Works } from "@/components/pages";
-import { Montserrat } from "@next/font/google";
-
-const montserrat = Montserrat({ subsets: ["latin"] });
 
 export default function Home() {
   return (
