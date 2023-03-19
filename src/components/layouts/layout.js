@@ -2,7 +2,7 @@ import Footer from "./footer";
 import Header from "./header";
 import Sidebar from "./sidebar";
 
-export default function layout({ children }) {
+export default function Layout({ children }) {
   return (
     <div className="w-full min-h-screen " name="wrapper">
       <Header />
