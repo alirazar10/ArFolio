@@ -111,7 +111,7 @@ export default function HomePage() {
                     accessibility(),
                     placeholder(),
                   ]}
-                  className="object-center object-cover min-h-full"
+                  className="object-center object-cover min-h-full h-full w-full"
                   alt="Hero section Image"
                 />
               </div>

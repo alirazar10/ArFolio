@@ -53,6 +53,7 @@ export default function SocialMediaMetaTags() {
       />
       <meta name="googlebot" content="all" />
       <meta name="robots" content="all" />
+      <meta name="theme-color" content="#0A192F" />
     </>
   );
 }
