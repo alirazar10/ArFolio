@@ -1,14 +1,19 @@
 "use client";
 
-import { Link, animateScroll as scroll, scrollSpy } from "react-scroll";
-import { Fade, FadeUp } from "../libs/transitions";
+import { hero } from "@/content/hero-content";
+import { heroImage } from "@/utils/cloudinary";
+import {
+  AdvancedImage,
+  accessibility,
+  lazyload,
+  placeholder,
+  responsive,
+} from "@cloudinary/react";
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-scroll";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import "../../styles/transitionStyle.css";
-import { hero } from "@/content/hero-content";
-import ScrollRevealWrapper from "../libs/scrollRevealWrapper";
-import Image from "next/image";
-import myPic from "/public/assets/images/4E6A5969.jpeg";
+import { generateImageUrl } from "../libs/imageCreator";
 
 export default function HomePage() {
   const [show, setShow] = useState(false);
@@ -98,14 +103,16 @@ export default function HomePage() {
               style={{ transitionDelay: "300sm" }}
             >
               <div className="relative h-[160px] w-[150px] mx-auto lg:mx-0  lg:h-full lg:w-full border z-10 lg:z-0 border-accent-700 filter bg-primary-500  lg:bg-blend-luminosity bg-cover bg-center lg:opacity-20 lg:hover:opacity-60 transition-all duration-150 overflow-hidden ">
-                <Image
-                  src={myPic}
-                  alt="My pic"
-                  quality={80}
+                <AdvancedImage
+                  cldImg={generateImageUrl(heroImage.imagePublicId)}
+                  plugins={[
+                    lazyload(),
+                    responsive({ steps: [800, 1000, 1400] }),
+                    accessibility(),
+                    placeholder(),
+                  ]}
                   className="object-center object-cover min-h-full"
-                  loading="lazy"
-                  blur={true}
-                  // priority="true"
+                  alt="Hero section Image"
                 />
               </div>
             </div>
