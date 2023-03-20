@@ -12,7 +12,7 @@ export default function Experience() {
               Where I Worked
             </h2>
           </ScrollRevealWrapper>
-          <ScrollRevealWrapper options={{ delay: 600 }}>
+          <ScrollRevealWrapper options={{ delay: 400 }}>
             <Accordion items={EXPERIENCE} />
           </ScrollRevealWrapper>
         </div>
