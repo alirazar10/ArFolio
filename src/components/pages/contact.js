@@ -55,6 +55,7 @@ export default function Contact() {
                     type="text"
                     name="name"
                     id="name"
+                    placeholder="John Wick"
                     autoComplete="given-name"
                     className="mt-1.5 p-2 block w-full rounded-md h-12 bg-secondary-100 border-secondary-300 shadow-primary focus:border-primary-400 focus:ring-accent-500 sm:text-sm"
                   />
@@ -98,7 +99,7 @@ export default function Contact() {
                       name="message"
                       rows={4}
                       className="mt-1 p-2 block w-full rounded-md bg-secondary-100 border-secondary-300 shadow-primary focus:border-primary-400 focus:ring-accent-500 sm:text-sm"
-                      placeholder=""
+                      placeholder="Hey, Ali..."
                       defaultValue={""}
                     />
                   </div>
