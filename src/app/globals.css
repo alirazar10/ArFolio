@@ -8,6 +8,26 @@
   * {
     font-family: "Montserrat", sans-serif;
   }
+  body {
+    overflow-y: overlay;
+  }
+  body::-webkit-scrollbar {
+    width: 14px;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    height: 40px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    border: 4px solid transparent;
+    background-clip: content-box;
+    @apply bg-secondary-200;
+  }
+
+  body::-webkit-scrollbar-track {
+    width: 0px;
+  }
 }
 .transition-height {
   transition-property: height;

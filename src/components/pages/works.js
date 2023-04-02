@@ -15,7 +15,7 @@ export default function Works() {
 
   async function handleReveal() {
     if (revealProjects.current.length > 0) {
-      const delay = 500;
+      const delay = 300;
       const sr = (await import("scrollreveal")).default;
       sr().reveal(revealTitle.current, srConfig(delay));
 

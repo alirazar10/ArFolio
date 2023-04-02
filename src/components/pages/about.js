@@ -44,7 +44,7 @@ export default function About() {
           </div>
         </ScrollRevealWrapper>
         <div className=" group rounded-md  lg:absolute lg:top-2/4 lg:-translate-y-2/4 lg:left-[50%] ">
-          <ScrollRevealWrapper options={{ origin: "right", delay: 600 }}>
+          <ScrollRevealWrapper options={{ origin: "right", delay: 200 }}>
             <div className="lg:bg-secondary-600 px-8 py-10 lg:shadow-primary lg:border lg:border-primary-700 rounded-md">
               <h2 className="text-lg md:text-xl lg:text-2xl font-semibold text-primary-50 pb-5 transition-all duration-300 group-hover:text-accent-500">
                 Skills and Expertise
