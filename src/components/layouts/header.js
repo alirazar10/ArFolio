@@ -39,7 +39,7 @@ export default function Header() {
         className="flex justify-start lg:justify-center items-center h-full lg:mx-auto"
         name="social-media"
       >
-        <ul className="flex justify-start lg:justify-center items-center h-full gap-3 text-2xl px-4 text-accent-500 bg-secondary-500 bg-opacity-50 rounded-br-lg lg:rounded-b-xl">
+        <ul className="flex justify-start lg:justify-center items-center h-full gap-3 text-2xl px-4 text-accent-500 bg-secondary-500 bg-opacity-50 rounded-br-md lg:rounded-b-md">
           <li className="text-accent-500 hover:text-accent-400 transition-all duration-150">
             <a
               href={SOCIAL_LINKS.facebook.link}
