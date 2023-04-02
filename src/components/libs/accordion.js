@@ -1,6 +1,6 @@
 "use client";
 
-import { createRef, useEffect, useRef, useState } from "react";
+import { createRef, useState } from "react";
 import Head from "next/head";
 import { MdAdd, MdOutlineOpenInNew, MdRemove } from "react-icons/md";
 import { IoLocation } from "react-icons/io5";
@@ -26,27 +26,26 @@ export const Accordion = ({ items }) => {
     <div className=" rounded-md w-full">
       <TransitionGroup component={null}>
         {items?.map((item, index) => {
-          const itemsRes = createRef(null);
+          const itemsRef = createRef(null);
           return (
             <CSSTransition
               key={index}
               in={true}
-              nodeRef={itemsRes}
+              nodeRef={itemsRef}
               timeout={2000}
               classNames="fadeup"
               appear
             >
               <div
-                id={index}
                 key={index}
-                ref={itemsRes}
+                ref={itemsRef}
                 className="mb-4"
                 style={{ transitionDelay: `${index + 1}00ms` }}
               >
                 <div
                   className={`w-full text-left px-4 py-2 font-medium focus:outline-none group bg-primary-800 ${
                     activeIndex === index ? "bg-opacity-40" : "bg-opacity-100"
-                  } rounded-md hover:shadow-primary cursor-pointer`}
+                  } rounded-md hover:shadow-primary cursor-pointer ease-in-out  translate-y-0 hover:-translate-y-1.5 duration-300`}
                   onClick={() => toggleItem(index)}
                 >
                   <div className="flex items-center justify-between py-2 gap-2">

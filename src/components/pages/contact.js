@@ -114,7 +114,7 @@ export default function Contact() {
                 <button
                   disabled={state.submitting}
                   type="submit"
-                  className="inline-flex justify-center rounded-md border border-transparent bg-accent-500 py-2 px-4 text-sm font-medium text-primary-50 shadow-sm hover:bg-accent-700 focus:outline-none focus:ring-1 focus:ring-accent-500 focus:ring-offset-1"
+                  className="inline-flex justify-center rounded-md border border-transparent bg-accent-500 py-3 px-5 text-sm font-medium text-primary-50 shadow-sm hover:bg-accent-700 focus:outline-none focus:ring-1 focus:ring-accent-500 focus:ring-offset-1 w-full"
                 >
                   Send
                 </button>
