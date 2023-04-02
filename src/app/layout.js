@@ -1,6 +1,6 @@
 import "./globals.css";
 import "../styles/transitionStyle.css";
-import { Analytics } from "@vercel/analytics/react";
+
 import { Montserrat } from "@next/font/google";
 import Layout from "@/components/layouts/layout";
 import Head from "./head";
@@ -43,7 +43,6 @@ export default function RootLayout({ children }) {
         className={`${montserrat.className} bg-primary-500 min-h-screen m-0 p-0`}
       >
         <Layout>{children}</Layout>
-        <Analytics />
       </body>
     </html>
   );
