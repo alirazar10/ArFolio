@@ -18,7 +18,6 @@ export const Accordion = ({ items }) => {
     } else {
       setActiveIndex(index);
       setActiveHeight(height);
-      console.log(activeHeight, height);
     }
   };
 

@@ -25,7 +25,6 @@ export function FadeUp({ show, children }) {
   useEffect(() => {
     setFadeUp(show);
   }, [fadeUp, show]);
-  console.log(fadeUp);
   return (
     <CSSTransition
       in={fadeUp}

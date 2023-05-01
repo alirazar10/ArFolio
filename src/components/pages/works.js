@@ -27,7 +27,6 @@ export default function Works() {
 
   useEffect(() => {
     handleReveal();
-    // console.log(revealProjects.current);
   }, []);
 
   const loadMore = () => {
