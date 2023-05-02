@@ -23,7 +23,6 @@ export default function SocialMediaMetaTags() {
         content="Full Stack Developer, Next.js React.js, JavaScript, PHP, Laravel, Python, Flask, TailwindCSS, CSS, HTML, Developer, "
       />
       <meta name="author" content="Ali Reza Rezayee" />
-      meta
       <link rel="icon" href="" />
       {/* Facebook and linkedin Meta Tags*/}
       <meta property={`og:title`} content={META_TAGS.facebook.title} />
