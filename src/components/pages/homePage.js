@@ -33,7 +33,7 @@ export default function HomePage() {
   const item1 = {
     ref: useRef(null),
     el: (
-      <h4 className="text-primary-50 text-sm md:text-xl lg:text-2xl font-bold inline lg:block pr-2">
+      <h4 className="text-primary-50 text-base md:text-xl lg:text-2xl font-bold inline lg:block pr-2">
         {hero.greeting}
       </h4>
     ),
@@ -100,21 +100,10 @@ export default function HomePage() {
           >
             <div
               ref={heroImageRef}
-              className="h-[160px] w-[150px] rounded-md  mx-auto lg:mx-0  lg:h-full lg:w-[35%] overflow-hidden  lg:absolute lg:top-0 lg:right-0 lg:bottom-0 "
+              className="h-[50vh] w-[80vw]  rounded-md  mx-auto lg:mx-0  lg:h-full lg:w-[35%] overflow-hidden  lg:absolute lg:top-0 lg:right-0 lg:bottom-0 "
               style={{ transitionDelay: "300sm" }}
             >
-              <div className="relative h-[160px] w-[150px] mx-auto lg:mx-0  lg:h-full lg:w-full border z-10 lg:z-0 border-accent-700 filter bg-primary-500  lg:bg-blend-luminosity bg-cover bg-center lg:opacity-20 lg:hover:opacity-60 transition-all duration-150 overflow-hidden ">
-                {/* <AdvancedImage
-                  cldImg={generateImageUrl(heroImage.imagePublicId)}
-                  plugins={[
-                    lazyload(),
-                    responsive({ steps: [800, 1000, 1400] }),
-                    accessibility(),
-                    placeholder(),
-                  ]}
-                  className="object-center object-cover min-h-full h-full w-full"
-                  alt="Hero section Image"
-                /> */}
+              <div className="relative h-full w-full mx-auto lg:mx-0  lg:h-full lg:w-full border z-10 lg:z-0 border-accent-700 filter bg-primary-500  lg:bg-blend-luminosity bg-cover bg-center lg:opacity-20 lg:hover:opacity-60 transition-all duration-150 overflow-hidden rounded-md">
                 <Image
                   src={generateImageUrl(heroImage.imagePublicId).toURL()}
                   width={1280}
@@ -127,7 +116,7 @@ export default function HomePage() {
             </div>
           </CSSTransition>
         )}
-        <div className=" h-full lg:h-fit py-3  relative -mt-20 lg:mt-0 border lg:border-none border-primary-700 bg-secondary-500  flex flex-col justify-center items-center lg:items-start rounded-md bg-opacity-0 lg:max-w-[65%]">
+        <div className=" h-full lg:h-fit py-3  relative -mt-20 lg:mt-0 border-none lg:border-none border-primary-700 bg-secondary-500  flex flex-col justify-center items-center lg:items-start rounded-md bg-opacity-0 lg:max-w-[65%]">
           {show && (
             <TransitionGroup
               component={"div"}
