@@ -25,13 +25,13 @@ export default function Experience() {
   return (
     <>
       <div className="min-h-screen flex justify-center items-center max-w-3xl mx-auto">
-        <div className="w-full">
+        <div className="w-full flex flex-col">
           <ScrollRevealWrapper options={{ delay: 300 }}>
             <h2 className="text-3xl font-bold text-primary-50 py-5 lg:py-10 text-left">
               Where I Worked
             </h2>
           </ScrollRevealWrapper>
-          <ScrollRevealWrapper options={{ delay: 300 }}>
+          <ScrollRevealWrapper options={{ delay: 200 }}>
             <Accordion items={experienceItems} />
 
             <div className="text-center">

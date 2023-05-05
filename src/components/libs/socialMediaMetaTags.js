@@ -32,7 +32,7 @@ export default function SocialMediaMetaTags() {
       />
       <meta
         property={`og:image`}
-        content={generateImageUrl(heroImage.imagePublicId).toURL()}
+        content={generateImageUrl(heroImage.metaTagImage).toURL()}
       />
       <meta property={`og:url`} content={META_TAGS.facebook.url} />
       <meta property={`og:type`} content={`website`} />
@@ -46,7 +46,7 @@ export default function SocialMediaMetaTags() {
       />
       <meta
         name="twitter:image"
-        content={generateImageUrl(heroImage.imagePublicId).toURL()}
+        content={generateImageUrl(heroImage.metaTagImage).toURL()}
       />
       <meta
         name="google-site-verification"
