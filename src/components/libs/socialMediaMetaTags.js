@@ -25,17 +25,27 @@ export default function SocialMediaMetaTags() {
       <meta name="author" content="Ali Reza Rezayee" />
       <link rel="icon" href="" />
       {/* Facebook and linkedin Meta Tags*/}
+
+      <meta property="og:url" content={META_TAGS.facebook.url} />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content={META_TAGS.facebook.title} />
+      <meta
+        property="og:description"
+        content={META_TAGS.facebook.description}
+      />
+      <meta
+        property="og:image"
+        content={generateImageUrl(heroImage.metaTagImage).toURL()}
+      />
+      <meta property="og:image:alt" content="Home page" />
+      <meta property="og:site_name" content="Ali Reza Rezayee Portfolio" />
+
       <meta property={`og:title`} content={META_TAGS.facebook.title} />
       <meta
         property={`og:description`}
         content={META_TAGS.facebook.description}
       />
-      <meta
-        property={`og:image`}
-        content={generateImageUrl(heroImage.metaTagImage).toURL()}
-      />
-      <meta property={`og:url`} content={META_TAGS.facebook.url} />
-      <meta property={`og:type`} content={`website`} />
+
       {/* Twitter Meta Tags */}
       <meta name="twitter:card" content={META_TAGS.twitter.card} />
       <meta name="twitter:site" content={META_TAGS.twitter.site} />
@@ -48,6 +58,8 @@ export default function SocialMediaMetaTags() {
         name="twitter:image"
         content={generateImageUrl(heroImage.metaTagImage).toURL()}
       />
+      <meta property="og:image:alt" content="Home page" />
+
       <meta
         name="google-site-verification"
         content="reqWSYtRisTcEA7GeQk74Ld6hEWvSN9apg9vrXghIWE"
