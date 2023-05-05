@@ -100,10 +100,10 @@ export default function HomePage() {
           >
             <div
               ref={heroImageRef}
-              className="h-[50vh] w-[80vw]  rounded-md  mx-auto lg:mx-0  lg:h-full lg:w-[35%] overflow-hidden  lg:absolute lg:top-0 lg:right-0 lg:bottom-0 "
+              className="h-[50vh] w-[80vw]  rounded-md  mx-auto lg:mx-0  lg:h-full lg:w-[35%] overflow-hidden  lg:absolute lg:top-0 lg:right-0 lg:bottom-0 hover:shadow-primary"
               style={{ transitionDelay: "300sm" }}
             >
-              <div className="relative h-full w-full mx-auto lg:mx-0  lg:h-full lg:w-full border z-10 lg:z-0 border-accent-700 filter bg-primary-500  lg:bg-blend-luminosity bg-cover bg-center lg:opacity-20 lg:hover:opacity-60 transition-all duration-150 overflow-hidden rounded-md">
+              <div className="relative h-full w-full mx-auto lg:mx-0  lg:h-full lg:w-full hover:border z-10 lg:z-0 border-accent-700 filter bg-primary-500  lg:bg-blend-luminosity bg-cover bg-center lg:opacity-20 lg:hover:opacity-60 transition-all duration-150 overflow-hidden rounded-md">
                 <Image
                   src={generateImageUrl(heroImage.imagePublicId).toURL()}
                   width={1280}

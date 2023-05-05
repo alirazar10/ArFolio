@@ -29,11 +29,15 @@ export const skills = [
     rate: 5,
   },
   {
+    name: "Next.js",
+    rate: 4,
+  },
+  {
     name: "React.js",
     rate: 4,
   },
   {
-    name: "PHP v5+",
+    name: "PHP",
     rate: 5,
   },
   {
@@ -41,8 +45,16 @@ export const skills = [
     rate: 5,
   },
   {
+    name: "Node.js",
+    rate: 4,
+  },
+  {
     name: "MySQL",
     rate: 5,
+  },
+  {
+    name: "PostgreSQL",
+    rate: 4,
   },
   {
     name: "TailwindCss",
@@ -60,10 +72,10 @@ export const skills = [
     name: "AJAX",
     rate: 5,
   },
-  {
-    name: "JSON",
-    rate: 5,
-  },
+  // {
+  //   name: "JSON",
+  //   rate: 5,
+  // },
   {
     name: "Python",
     rate: 4,
@@ -77,43 +89,43 @@ export const skills = [
     name: "Flutter",
     rate: 3,
   },
-  {
-    name: "C, C++, C#, JAVA, Dart",
-    rate: 2,
-  },
-  {
-    name: "Android",
-    rate: 2,
-  },
+  // {
+  //   name: "C, C++, C#, JAVA, Dart",
+  //   rate: 2,
+  // },
+  // {
+  //   name: "Android",
+  //   rate: 2,
+  // },
   {
     name: "MS SQL Server",
     rate: 3,
   },
 
-  {
-    name: "Windows OS",
-    rate: 5,
-  },
-  {
-    name: "Linux OS",
-    rate: 4,
-  },
+  // {
+  //   name: "Windows OS",
+  //   rate: 5,
+  // },
+  // {
+  //   name: "Linux OS",
+  //   rate: 4,
+  // },
   {
     name: "Docker",
     rate: 2,
   },
-  {
-    name: "SSH",
-    rate: 4,
-  },
+  // {
+  //   name: "SSH",
+  //   rate: 4,
+  // },
   {
     name: "Git, GitHub",
     rate: 5,
   },
-  {
-    name: "MS Office",
-    rate: 5,
-  },
+  // {
+  //   name: "MS Office",
+  //   rate: 5,
+  // },
   {
     name: "SEO",
     rate: 3,
@@ -130,14 +142,14 @@ export const skills = [
     name: "WordPress",
     rate: 4,
   },
-  {
-    name: "Octoparse",
-    rate: 3,
-  },
-  {
-    name: "Tableau",
-    rate: 3,
-  },
+  // {
+  //   name: "Octoparse",
+  //   rate: 3,
+  // },
+  // {
+  //   name: "Tableau",
+  //   rate: 3,
+  // },
 ];
 
 export const EXPERIENCE = [

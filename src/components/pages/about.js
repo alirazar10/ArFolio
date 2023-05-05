@@ -13,7 +13,7 @@ export default function About() {
         <ScrollRevealWrapper>
           <div
             ref={experienceRef}
-            className="py-8 p-4 pt-6 lg:px-10 space-y-2 lg:space-y-3 lg:w-[75%] lg:pr-[30%] "
+            className="py-8 p-4 pt-6 lg:px-10 space-y-2 lg:space-y-3 lg:w-[100%] lg:pr-[35%] "
             name="about-content"
           >
             <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-primary-50 py-2">
@@ -26,6 +26,15 @@ export default function About() {
               student, working as a technician for a small ISP company. From
               there, my interest in computer science grew, and I knew that I had
               found my calling.
+            </p>
+            <p className="text-primary-100 text-justify text-sm lg:text-base leading-6 lg:leading-7">
+              Looking back at my journey so far, I was able to grab the
+              opportunities to work in several organizations like Kateb
+              University, Mustafa Group based in Dubai, and as a freelance, grow
+              and develop my skills as a Full-stack developer, that led me to my
+              current role in a Canadian base start-up. Furthermore, working on
+              a variety of projects, including some of my own, has helped me
+              build expertise in various areas of web development.
             </p>
             <p className="text-primary-100 text-justify text-sm lg:text-base leading-6 lg:leading-7">
               I believe that technology is a powerful tool that has the ability
@@ -43,7 +52,7 @@ export default function About() {
             </p>
           </div>
         </ScrollRevealWrapper>
-        <div className=" rounded-md  lg:absolute lg:top-2/4 lg:-translate-y-2/4 lg:left-[50%] ">
+        <div className=" rounded-md  lg:absolute lg:top-2/4 lg:-translate-y-2/4 lg:left-[70%] ">
           <ScrollRevealWrapper options={{ origin: "right", delay: 200 }}>
             <div className="lg:bg-secondary-600 px-8 py-10 lg:shadow-primary lg:border lg:border-primary-700 rounded-md">
               <h2 className="text-lg md:text-xl lg:text-2xl font-semibold text-primary-50 pb-5 transition-all duration-300 ">
