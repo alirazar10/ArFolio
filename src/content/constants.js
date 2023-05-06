@@ -160,7 +160,7 @@ export const EXPERIENCE = [
     employment_type: "Full-time",
     start_date: "Dec 2022",
     end_date: "Present",
-    location: "Vancouver, British Columbia, Canada",
+    location: "Ontario, Canada",
     description:
       "As a Full Stack Developer, I bring expertise in CSS (Tailwind), React, NextJS, and Material UI (MUI). Currently, I am working in a remote capacity, leveraging my technical skills to deliver user-centered and visually appealing web experiences.",
     skills: [

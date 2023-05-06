@@ -10,6 +10,7 @@ import ResumeIcon from "@/assets/icons/resume-icon";
 import { SOCIAL_LINKS } from "@/content/constants";
 import { AiFillInstagram } from "react-icons/ai";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function Header() {
   const [showHeader, setShowHeader] = useState(true);
@@ -91,10 +92,17 @@ export default function Header() {
             </a>
           </li>
           <li className="text-accent-500 hover:text-accent-400 transition-all duration-150">
-            <ResumeIcon
-              className="w-7 lg:w-8 text-accent-500 hover:text-accent-400"
-              color={"#FF5722"}
-            />
+            <a
+              href="/assets/alireza-cv.pdf"
+              alt="alt text"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ResumeIcon
+                className="w-7 lg:w-8 text-accent-500 hover:text-accent-400"
+                color={"#FF5722"}
+              />
+            </a>
           </li>
         </ul>
       </header>
