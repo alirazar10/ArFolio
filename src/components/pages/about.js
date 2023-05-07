@@ -56,7 +56,7 @@ export default function About() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span>Download CV</span>
+                <span>Download My Resume</span>
               </a>
             </p>
           </div>
