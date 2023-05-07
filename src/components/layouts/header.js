@@ -15,7 +15,7 @@ export default function Header() {
   const [lastScrollPos, setLastScrollPos] = useState(0);
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollPos = window.pageYOffset;
+      const currentScrollPos = window.scrollY;
       setShowHeader(lastScrollPos > currentScrollPos || currentScrollPos < 10);
       setLastScrollPos(currentScrollPos);
     };

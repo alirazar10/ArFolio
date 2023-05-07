@@ -41,6 +41,8 @@ export default function RootLayout({ children }) {
 
       <body
         className={`${montserrat.className} bg-primary-500 min-h-screen m-0 p-0`}
+        name="top"
+        id="top"
       >
         <Layout>{children}</Layout>
       </body>

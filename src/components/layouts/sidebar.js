@@ -56,15 +56,15 @@ export default function Sidebar() {
       <div
         className={` ${
           open
-            ? "fixed top-0 bottom-0 z-30 left-0 right-0 bg-primary-900 overflow-hidden h-screen w-screen opacity-50"
+            ? "fixed top-0 bottom-0 z-30 left-0 right-0 bg-primary-900  overflow-hidden h-screen w-screen opacity-50"
             : "hd"
         } `}
         onClick={handleMenu}
       ></div>
 
       <div
-        className={`block lg:hidden min-h-0 fixed z-50 top-0 right-0 h-fit ease-in-out duration-300 ${
-          open ? "translate-x-0 w-60 " : "translate-x-full"
+        className={`block lg:hidden min-h-0 fixed z-50 top-0 right-0 bottom-0 h-fit ease-in-out duration-300 ${
+          open ? "translate-x-0 w-60 h-fit" : "translate-x-full"
         }`}
       >
         <nav className={`flex w-full  mt-20`} onClick={handleMenu}>
@@ -85,6 +85,7 @@ export default function Sidebar() {
                   offset={-100}
                   duration={500}
                   activeClass="text-accent-500 font-bold"
+                  onClick={handleMenu}
                 >
                   {item.label}
                   {item.icon}
