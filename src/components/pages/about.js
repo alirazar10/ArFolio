@@ -3,10 +3,16 @@ import { skills } from "@/content/constants";
 import { Skills } from "../libs";
 import { useRef } from "react";
 import ScrollRevealWrapper from "../libs/scrollRevealWrapper";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function About() {
   const experienceRef = useRef(null);
-
+  const router = useRouter();
+  function handleDownload(e) {
+    e.preventDefault();
+    router.push("/assets/alireza-cv.pdf");
+  }
   return (
     <div className="flex justify-center items-center w-full h-full">
       <div className="relative ">
@@ -49,6 +55,16 @@ export default function About() {
               great outdoors or enjoying a hot cup of coffee. Thanks for taking
               the time to get to know me a little better - I can&lsquo;t wait to
               work together and bring your ideas to life!
+              <Link
+                className="px-8 py-2 text-lg font-semibold outline outline-1 outline-primary-50 text-primary-50 hover:outline-accent-500 hover:text-accent-500 rounded-md mt-6 inline-block"
+                href="#"
+                alt="alt text"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleDownload}
+              >
+                <span>Download CV</span>
+              </Link>
             </p>
           </div>
         </ScrollRevealWrapper>

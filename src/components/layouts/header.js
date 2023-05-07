@@ -11,11 +11,16 @@ import { SOCIAL_LINKS } from "@/content/constants";
 import { AiFillInstagram } from "react-icons/ai";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Header() {
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollPos, setLastScrollPos] = useState(0);
-
+  const router = useRouter();
+  function handleDownload(e) {
+    e.preventDefault();
+    router.push("/assets/alireza-cv.pdf");
+  }
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
@@ -93,10 +98,11 @@ export default function Header() {
           </li>
           <li className="text-accent-500 hover:text-accent-400 transition-all duration-150">
             <a
-              href="/assets/alireza-cv.pdf"
+              href="#"
               alt="alt text"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={handleDownload}
             >
               <ResumeIcon
                 className="w-7 lg:w-8 text-accent-500 hover:text-accent-400"
