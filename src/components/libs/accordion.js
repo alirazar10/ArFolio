@@ -84,7 +84,12 @@ export const Accordion = ({ items }) => {
                             size={20}
                             className="text-primary-50"
                           />{" "}
-                          <a href={item.link} aria-label={"Website link"}>
+                          <a
+                            href={item.link}
+                            aria-label={"Website link"}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
                             {item.link}
                           </a>
                         </>

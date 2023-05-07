@@ -101,12 +101,22 @@ export default function Works() {
                     </div>
                     <div className="flex justify-end items-center mt-4 gap-2">
                       {item.website_link && (
-                        <a href={item.website_link} aria-label={"Website link"}>
+                        <a
+                          href={item.website_link}
+                          aria-label={"Website link"}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
                           <MdOutlineOpenInNew className="text-xl lg:text-2xl text-primary-50 hover:text-accent-400 cursor-pointer" />
                         </a>
                       )}
                       {item.github_link && (
-                        <a href={item.github_link} aria-label={"GitGub link"}>
+                        <a
+                          href={item.github_link}
+                          aria-label={"GitGub link"}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
                           <IoLogoGithub className="text-xl lg:text-2xl text-primary-50 hover:text-accent-400 cursor-pointer" />
                         </a>
                       )}
@@ -114,6 +124,8 @@ export default function Works() {
                         <a
                           href={item.playstore_link}
                           aria-label={"playstore link"}
+                          target="_blank"
+                          rel="noreferrer"
                         >
                           <IoLogoGooglePlaystore className="text-xl lg:text-2xl text-primary-50 hover:text-accent-400 cursor-pointer" />
                         </a>
