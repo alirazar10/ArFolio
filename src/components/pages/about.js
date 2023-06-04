@@ -49,6 +49,8 @@ export default function About() {
               great outdoors or enjoying a hot cup of coffee. Thanks for taking
               the time to get to know me a little better - I can&lsquo;t wait to
               work together and bring your ideas to life!
+            </p>
+            <div className="mt-5">
               <a
                 className="px-8 py-2 text-lg font-semibold outline outline-1 outline-primary-50 text-primary-50 hover:outline-accent-500 hover:text-accent-500 rounded-md mt-6 inline-block"
                 href={"/assets/alireza-cv.pdf"}
@@ -58,7 +60,7 @@ export default function About() {
               >
                 <span>Download My Resume</span>
               </a>
-            </p>
+            </div>
           </div>
         </ScrollRevealWrapper>
         <div className=" rounded-md  lg:absolute lg:top-2/4 lg:-translate-y-2/4 lg:left-[70%] ">
