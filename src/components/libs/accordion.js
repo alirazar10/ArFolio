@@ -1,7 +1,6 @@
 "use client";
 
 import { createRef, useState } from "react";
-import Head from "next/head";
 import { MdAdd, MdOutlineOpenInNew, MdRemove } from "react-icons/md";
 import { IoLocation } from "react-icons/io5";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
