@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { initGA, logPageView } from "@/utils/gAnalytics";
 import { useRouter } from "next/navigation";
 import { MetaTags } from "@/components/libs";
+import Script from "next/script";
 
 export default function Head() {
   const router = useRouter();
@@ -26,6 +27,7 @@ export default function Head() {
   return (
     <>
       <MetaTags />
+      <Script src="https://www.googleoptimize.com/optimize.js?id=OPT-P3RB9RT" />
     </>
   );
 }

@@ -38,7 +38,6 @@ export default function RootLayout({ children }) {
           `,
           }}
         />
-        <Script src="https://www.googleoptimize.com/optimize.js?id=OPT-P3RB9RT" />
       </head>
 
       <body
