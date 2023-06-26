@@ -4,6 +4,7 @@ import "../styles/transitionStyle.css";
 import { Montserrat } from "@next/font/google";
 import Layout from "@/components/layouts/layout";
 import Head from "./head";
+import Script from "next/script";
 
 const montserrat = Montserrat({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -37,6 +38,7 @@ export default function RootLayout({ children }) {
           `,
           }}
         />
+        <Script src="https://www.googleoptimize.com/optimize.js?id=OPT-P3RB9RT" />
       </head>
 
       <body
