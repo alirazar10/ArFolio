@@ -7,6 +7,7 @@ export default function Footer() {
           href="https://github.com/alirazar10/ArFolio"
           target="_blank"
           rel="noreferrer"
+          alt="Ali Reza Rezayee (ARFolio) GitHub source code. (Ali Reza Rezayee)"
           className="text-accent-500 font-bold"
         >
           ArFolio

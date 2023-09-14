@@ -43,7 +43,7 @@ export default function Header() {
               href={SOCIAL_LINKS.facebook.link}
               target="_blank"
               rel="noreferrer"
-              aria-label={"My Facebook Account Link"}
+              aria-label={"ali reza rezayee's Facebook Account Link"}
             >
               <IoLogoFacebook className="text-2xl lg:text-3xl" />
             </a>
@@ -53,7 +53,7 @@ export default function Header() {
               href={SOCIAL_LINKS.github.link}
               target="_blank"
               rel="noreferrer"
-              aria-label={"My GitHub Account Link"}
+              aria-label={"ali reza rezayee's GitHub Account Link"}
             >
               <IoLogoGithub className="text-2xl lg:text-3xl" />
             </a>
@@ -63,7 +63,7 @@ export default function Header() {
               href={SOCIAL_LINKS.linkedin.link}
               target="_blank"
               rel="noreferrer"
-              aria-label={"My LinkedIn Account Link"}
+              aria-label={"ali reza rezayee's LinkedIn Account Link"}
             >
               <IoLogoLinkedin className="text-2xl lg:text-3xl" />
             </a>
@@ -73,7 +73,7 @@ export default function Header() {
               href={SOCIAL_LINKS.twitter.link}
               target="_blank"
               rel="noreferrer"
-              aria-label={"My Twitter Account Link"}
+              aria-label={"ali reza rezayee's Twitter Account Link"}
             >
               <IoLogoTwitter className="text-3xl lg:text-4xl" />
             </a>
@@ -83,7 +83,7 @@ export default function Header() {
               href={SOCIAL_LINKS.instagram.link}
               target="_blank"
               rel="noreferrer"
-              aria-label={"My Instagram Account Link"}
+              aria-label={"ali reza rezayee's Instagram Account Link"}
             >
               <AiFillInstagram className="text-3xl lg:text-4xl" />
             </a>
@@ -91,7 +91,7 @@ export default function Header() {
           <li className="text-accent-500 hover:text-accent-400 transition-all duration-150">
             <a
               href={"/assets/alireza-cv.pdf"}
-              alt="alt text"
+              alt="ali reza rezayee's CV in PDF Format"
               target="_blank"
               rel="noopener noreferrer"
             >
