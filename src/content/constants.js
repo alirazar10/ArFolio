@@ -17,6 +17,7 @@ export const SOCIAL_LINKS = {
     link: "https://www.linkedin.com/in/alireza-r10/",
   },
   github: { social_account: "GitHub", link: "https://github.com/alirazar10" },
+  fiverr: { social_account: " ", link: "https://www.fiverr.com/alirazar10" },
   instagram: {
     social_account: "Instagram",
     link: "https://www.instagram.com/aliraza.r10/",

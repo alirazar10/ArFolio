@@ -10,6 +10,9 @@ import {
   IoLogoTwitter,
 } from "react-icons/io5";
 
+import {
+  TbBrandFiverr
+} from "react-icons/tb";
 export default function Header() {
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollPos, setLastScrollPos] = useState(0);
@@ -66,6 +69,16 @@ export default function Header() {
               aria-label={"ali reza rezayee's LinkedIn Account Link"}
             >
               <IoLogoLinkedin className="text-2xl lg:text-3xl" />
+            </a>
+          </li>
+          <li className="text-accent-500 hover:text-accent-400 transition-all duration-150">
+            <a
+              href={SOCIAL_LINKS.fiverr.link}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={"ali reza rezayee's Instagram Account Link"}
+            >
+              <TbBrandFiverr className="text-2xl lg:text-3xl" />
             </a>
           </li>
           <li className="text-accent-500 hover:text-accent-400 transition-all duration-150">
