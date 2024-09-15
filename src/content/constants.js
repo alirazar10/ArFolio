@@ -349,7 +349,7 @@ export const projects = [
     playstore_link:
       "https://play.google.com/store/apps/details?id=com.imor.hesab_ketab",
     github_link: "",
-    website_link: "",
+    website_link: "https://hk.imali.dev",
   },
   {
     title: "PARAS - REFUGEES GUIDE",
