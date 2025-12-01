@@ -1,12 +1,11 @@
 "use client";
 
-import { MetaTags } from "@/components/libs";
-
 /**
  * Head component for App Router
- * Renders structured data (JSON-LD) for SEO
- * All other meta tags are handled by metadata export in layout.tsx
+ * NOTE: Avoid rendering client components in <head> as it causes hydration mismatches
+ * All meta tags are handled by metadata export in layout.tsx
+ * Structured data is rendered via script in body (MetaTags component)
  */
-export default function Head(): React.ReactElement {
-  return <MetaTags />;
+export default function Head(): null {
+  return null;
 }

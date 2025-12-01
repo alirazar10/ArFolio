@@ -1,7 +1,7 @@
 "use client";
 
 import { createRef, useState } from "react";
-import { MdAdd, MdOutlineOpenInNew, MdRemove } from "react-icons/md";
+import { IoAdd, IoArrowForward, IoRemove } from "react-icons/io5";
 import { IoLocation } from "react-icons/io5";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
@@ -72,9 +72,9 @@ export const Accordion = ({ items }: AccordionProps): React.ReactElement => {
                     </p>
                     <span className="py-2">
                       {index !== activeIndex ? (
-                        <MdAdd className="text-2xl text-primary-50 font-bold  transition ease-in-out duration-300" />
+                        <IoAdd className="text-2xl text-primary-50 font-bold transition ease-in-out duration-300" />
                       ) : (
-                        <MdRemove className="text-2xl text-primary-50 font-bold" />
+                        <IoRemove className="text-2xl text-primary-50 font-bold" />
                       )}
                     </span>
                   </div>
@@ -96,7 +96,7 @@ export const Accordion = ({ items }: AccordionProps): React.ReactElement => {
                     <p className="text-sm text-secondary-300 pb-4 flex items-center gap-2">
                       {item.link && typeof item.link === 'string' && (
                         <>
-                          <MdOutlineOpenInNew
+                          <IoArrowForward
                             size={20}
                             className="text-primary-50"
                           />{" "}

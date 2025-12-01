@@ -2,8 +2,7 @@
 import { srConfig } from "@/configs/srConfig";
 import { projects } from "@/content/constants";
 import { createRef, useEffect, useRef, useState } from "react";
-import { IoLogoGithub, IoLogoGooglePlaystore } from "react-icons/io5";
-import { MdOutlineOpenInNew } from "react-icons/md";
+import { IoLogoGithub, IoLogoGooglePlaystore, IoArrowForward } from "react-icons/io5";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 const COL_LIMIT = 3;
 export default function Works(): React.ReactElement {
@@ -110,8 +109,9 @@ export default function Works(): React.ReactElement {
                           aria-label={"Website link"}
                           target="_blank"
                           rel="noreferrer"
+                          className="transition-all duration-300 transform hover:scale-125"
                         >
-                          <MdOutlineOpenInNew className="text-xl lg:text-2xl text-primary-50 hover:text-accent-400 cursor-pointer" />
+                          <IoArrowForward className="text-xl lg:text-2xl text-primary-50 hover:text-accent-400 cursor-pointer" />
                         </a>
                       )}
                       {item.github_link && (
@@ -120,6 +120,7 @@ export default function Works(): React.ReactElement {
                           aria-label={"GitGub link"}
                           target="_blank"
                           rel="noreferrer"
+                          className="transition-all duration-300 transform hover:scale-125"
                         >
                           <IoLogoGithub className="text-xl lg:text-2xl text-primary-50 hover:text-accent-400 cursor-pointer" />
                         </a>
@@ -130,6 +131,7 @@ export default function Works(): React.ReactElement {
                           aria-label={"playstore link"}
                           target="_blank"
                           rel="noreferrer"
+                          className="transition-all duration-300 transform hover:scale-125"
                         >
                           <IoLogoGooglePlaystore className="text-xl lg:text-2xl text-primary-50 hover:text-accent-400 cursor-pointer" />
                         </a>
@@ -144,14 +146,14 @@ export default function Works(): React.ReactElement {
       <div className="text-center w-full mt-6">
         {displayedProjects.length < projects.length ? (
           <button
-            className="text-white px-4 py-2 rounded-lg mt-4 outline outline-1 outline-primary-50 hover:outline-accent-500 hover:text-accent-500 transition-all duration-300"
+            className="text-white px-6 py-2 rounded-lg mt-4 outline-2 outline-primary-50 hover:outline-accent-500 hover:text-accent-500 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
             onClick={loadMore}
           >
             Load More
           </button>
         ) : (
           <button
-            className="text-white px-4 py-2 rounded-lg mt-4 outline outline-1 outline-primary-50 hover:outline-accent-500 hover:text-accent-500 transition-all duration-300"
+            className="text-white px-6 py-2 rounded-lg mt-4 outline-2 outline-primary-50 hover:outline-accent-500 hover:text-accent-500 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
             onClick={showLess}
           >
             Show Less

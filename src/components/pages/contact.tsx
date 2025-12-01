@@ -2,15 +2,15 @@
 
 import ResumeIcon from "@/assets/icons/resume-icon";
 import { SOCIAL_LINKS } from "@/content/constants";
-import { AiFillInstagram } from "react-icons/ai";
 import {
   IoLogoFacebook,
   IoLogoGithub,
   IoLogoLinkedin,
   IoLogoTwitter,
+  IoLogoInstagram,
 } from "react-icons/io5";
 import { useForm, ValidationError } from "@formspree/react";
-import { MdMail } from "react-icons/md";
+import { IoMailSharp } from "react-icons/io5";
 import ScrollRevealWrapper from "../libs/scrollRevealWrapper";
 
 export default function Contact(): React.ReactElement {
@@ -30,7 +30,7 @@ export default function Contact(): React.ReactElement {
               chat, feel free to drop me a line or email me directly.
             </p>
             <p className="flex items-center gap-2 my-5">
-              <MdMail className="text-xl text-primary-50" />
+              <IoMailSharp className="text-xl text-primary-50" />
               <a
                 href="mailto:aliraza.r10@gmail.com"
                 className="text-sm text-primary-50 font-bold hover:text-accent-500 transition-all duration-100"
@@ -114,7 +114,7 @@ export default function Contact(): React.ReactElement {
                 <button
                   disabled={state.submitting}
                   type="submit"
-                  className="inline-flex justify-center rounded-md border border-transparent bg-accent-500 py-3 px-5 text-sm font-medium text-primary-50 shadow-sm hover:bg-accent-700 focus:outline-none focus:ring-1 focus:ring-accent-500 focus:ring-offset-1 w-full"
+                  className="inline-flex justify-center rounded-md border border-transparent bg-accent-500 py-3 px-5 text-sm font-medium text-primary-50 shadow-sm hover:bg-accent-700 hover:shadow-lg focus:outline-none focus:ring-1 focus:ring-accent-500 focus:ring-offset-1 w-full transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   Send
                 </button>
@@ -141,7 +141,7 @@ export default function Contact(): React.ReactElement {
         <ScrollRevealWrapper options={{ delay: 600 }}>
           <div>
             <ul className="flex items-center gap-3 text-2xl text-primary-100">
-              <li className="text-primary-100 hover:text-accent-400 transition-all duration-100">
+              <li className="text-primary-100 hover:text-accent-400 transition-all duration-300 transform hover:scale-125">
                 <a
                   href={SOCIAL_LINKS.facebook.link}
                   aria-label={"My Facebook Account Link"}
@@ -149,7 +149,7 @@ export default function Contact(): React.ReactElement {
                   <IoLogoFacebook className="text-2xl lg:text-3xl" />
                 </a>
               </li>
-              <li className="text-primary-100 hover:text-accent-400 transition-all duration-100">
+              <li className="text-primary-100 hover:text-accent-400 transition-all duration-300 transform hover:scale-125">
                 <a
                   href={SOCIAL_LINKS.github.link}
                   aria-label={"My GitHub Account Link"}
@@ -157,7 +157,7 @@ export default function Contact(): React.ReactElement {
                   <IoLogoGithub className="text-2xl lg:text-3xl" />
                 </a>
               </li>
-              <li className="text-primary-100 hover:text-accent-400 transition-all duration-100">
+              <li className="text-primary-100 hover:text-accent-400 transition-all duration-300 transform hover:scale-125">
                 <a
                   href={SOCIAL_LINKS.linkedin.link}
                   aria-label={"My LinkedIn Account Link"}
@@ -165,7 +165,7 @@ export default function Contact(): React.ReactElement {
                   <IoLogoLinkedin className="text-2xl lg:text-3xl" />
                 </a>
               </li>
-              <li className="text-primary-100 hover:text-accent-400 transition-all duration-100">
+              <li className="text-primary-100 hover:text-accent-400 transition-all duration-300 transform hover:scale-125">
                 <a
                   href={SOCIAL_LINKS.twitter.link}
                   aria-label={"My Twitter Account Link"}
@@ -173,12 +173,12 @@ export default function Contact(): React.ReactElement {
                   <IoLogoTwitter className="text-3xl lg:text-4xl" />
                 </a>
               </li>
-              <li className="text-primary-100 hover:text-accent-400 transition-all duration-100">
+              <li className="text-primary-100 hover:text-accent-400 transition-all duration-300 transform hover:scale-125">
                 <a
                   href={SOCIAL_LINKS.instagram.link}
                   aria-label={"My Instagram Account Link"}
                 >
-                  <AiFillInstagram className="text-3xl lg:text-4xl" />
+                  <IoLogoInstagram className="text-3xl lg:text-4xl" />
                 </a>
               </li>
             </ul>

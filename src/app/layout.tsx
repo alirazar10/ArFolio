@@ -4,10 +4,10 @@ import "../styles/transitionStyle.css";
 import { Montserrat } from 'next/font/google';
 import { Metadata } from 'next';
 import Layout from "@/components/layouts/layout";
-import Head from "./head";
 import Script from "next/script";
 import { ReactNode } from "react";
 import { PerformanceOptimizer } from "@/components/libs/performance";
+import { MetaTags } from "@/components/libs";
 import { META_TAGS } from "@/content/metaTag";
 
 const montserrat = Montserrat({
@@ -92,13 +92,15 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#0A192B" />
-        <Head />
       </head>
 
       <body
         className={`${montserrat.className} bg-primary-500 min-h-screen m-0 p-0`}
         id="top"
       >
+        {/* Structured Data (JSON-LD) - Must be in body to avoid hydration mismatch */}
+        <MetaTags />
+        
         <PerformanceOptimizer />
         <Layout>{children}</Layout>
         

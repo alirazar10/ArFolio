@@ -1,6 +1,4 @@
-import { FiBriefcase, FiLinkedin } from "react-icons/fi";
-import { AiFillFile, AiOutlineProfile } from "react-icons/ai";
-import { Md3P, MdContactMail } from "react-icons/md";
+import { IoPersonCircleSharp, IoBriefcaseSharp, IoCodeSlashSharp, IoMailSharp } from "react-icons/io5";
 
 interface MenuItem {
   label: string;
@@ -43,10 +41,10 @@ interface Project {
 }
 
 export const MENU_ITEM: MenuItem[] = [
-  { label: "About", value: "about", icon: <Md3P size={32} /> },
-  { label: "Experience", value: "experience", icon: <FiBriefcase size={32} /> },
-  { label: "Work", value: "work", icon: <AiOutlineProfile size={32} /> },
-  { label: "Contact", value: "contact", icon: <MdContactMail size={32} /> },
+  { label: "About", value: "about", icon: <IoPersonCircleSharp size={30} /> },
+  { label: "Experience", value: "experience", icon: <IoBriefcaseSharp size={30} /> },
+  { label: "Work", value: "work", icon: <IoCodeSlashSharp size={30} /> },
+  { label: "Contact", value: "contact", icon: <IoMailSharp size={30} /> },
 ];
 
 export const SOCIAL_LINKS: Record<string, SocialLink> = {

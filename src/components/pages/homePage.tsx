@@ -73,7 +73,7 @@ export default function HomePage(): React.ReactElement {
     el: (
       <div className="py-2 pt-5 my-3">
         <Link
-          className="px-8 py-2 text-lg font-semibold outline outline-primary-50 text-primary-50 hover:outline-accent-500 hover:text-accent-500 rounded-md"
+          className="px-8 py-2 text-lg font-semibold outline outline-2 outline-primary-50 text-primary-50 hover:outline-accent-500 hover:text-accent-500 hover:bg-accent-500/10 hover:shadow-lg rounded-md transition-all duration-300 ease-out transform hover:scale-105"
           href={"#contact"}
           to={"contact"}
           spy={true}
@@ -89,7 +89,7 @@ export default function HomePage(): React.ReactElement {
     ),
   };
   const heroContent = [item1, item2, item3, item4, item5];
-  console.log(heroImage.imagePublicId);
+
   return (
     <div className="w-full max-h-max">
       <div className="overflow-hidden rounded-md py-5 w-full h-full">
@@ -125,7 +125,7 @@ export default function HomePage(): React.ReactElement {
           {show && (
             <TransitionGroup
               component={"div"}
-              className={`px-5 py-5 pt-24 lg:p-2 lg:py-5  space-y-2  lg:text-left border-primary-700 bg-secondary-500  rounded-md bg-opacity-0`}
+              className={`px-5 py-5 pt-24 lg:p-2 lg:py-5  space-y-2  lg:text-left   rounded-md bg-opacity-0`}
             >
               {heroContent.map(({ ref, el }, index) => (
                 <CSSTransition

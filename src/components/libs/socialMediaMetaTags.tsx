@@ -1,5 +1,3 @@
-"use client";
-
 import { generateImageUrl } from "./imageCreator";
 import { heroImage } from "@/utils/cloudinary";
 
@@ -34,6 +32,7 @@ export default function MetaTags(): React.ReactElement {
     url: baseUrl,
     sameAs: [
       "https://github.com/alirazar10",
+      "https://www.linkedin.com/in/alireza-r10/",
       "https://www.linkedin.com/in/alireza-r10/",
       "https://twitter.com/AlirazaR10",
       "https://www.instagram.com/aliraza.r10/",

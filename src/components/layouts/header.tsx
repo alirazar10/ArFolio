@@ -2,17 +2,13 @@
 import ResumeIcon from "@/assets/icons/resume-icon";
 import { SOCIAL_LINKS } from "@/content/constants";
 import { useEffect, useState } from "react";
-import { AiFillInstagram } from "react-icons/ai";
 import {
   IoLogoFacebook,
   IoLogoGithub,
   IoLogoLinkedin,
   IoLogoTwitter,
+  IoLogoInstagram,
 } from "react-icons/io5";
-
-import {
-  TbBrandFiverr
-} from "react-icons/tb";
 
 export default function Header(): React.ReactElement {
   const [showHeader, setShowHeader] = useState(true);
@@ -42,8 +38,8 @@ export default function Header(): React.ReactElement {
         className="flex justify-start lg:justify-center items-center h-full lg:mx-auto"
         data-name="social-media"
       >
-        <ul className="flex justify-start lg:justify-center items-center h-full gap-3 text-2xl px-4 text-accent-500 bg-secondary-500 bg-opacity-50 rounded-br-md lg:rounded-b-md">
-          <li className="text-accent-500 hover:text-accent-400 transition-all duration-150">
+        <ul className="flex justify-start lg:justify-center items-center h-full gap-4 text-2xl px-4 text-accent-500 bg-secondary-500 bg-opacity-50 rounded-br-md lg:rounded-b-md">
+          <li className="text-accent-500 hover:text-accent-400 transition-all duration-300 transform hover:scale-125 hover:shadow-lg">
             <a
               href={SOCIAL_LINKS.facebook.link}
               target="_blank"
@@ -53,7 +49,7 @@ export default function Header(): React.ReactElement {
               <IoLogoFacebook className="text-2xl lg:text-3xl" />
             </a>
           </li>
-          <li className="text-accent-500 hover:text-accent-400 transition-all duration-150">
+          <li className="text-accent-500 hover:text-accent-400 transition-all duration-300 transform hover:scale-125 hover:shadow-lg">
             <a
               href={SOCIAL_LINKS.github.link}
               target="_blank"
@@ -63,7 +59,7 @@ export default function Header(): React.ReactElement {
               <IoLogoGithub className="text-2xl lg:text-3xl" />
             </a>
           </li>
-          <li className="text-accent-500 hover:text-accent-400 transition-all duration-150">
+          <li className="text-accent-500 hover:text-accent-400 transition-all duration-300 transform hover:scale-125 hover:shadow-lg">
             <a
               href={SOCIAL_LINKS.linkedin.link}
               target="_blank"
@@ -73,17 +69,7 @@ export default function Header(): React.ReactElement {
               <IoLogoLinkedin className="text-2xl lg:text-3xl" />
             </a>
           </li>
-          <li className="text-accent-500 hover:text-accent-400 transition-all duration-150">
-            <a
-              href={SOCIAL_LINKS.fiverr.link}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={"ali reza rezayee's Instagram Account Link"}
-            >
-              <TbBrandFiverr className="text-2xl lg:text-3xl" />
-            </a>
-          </li>
-          <li className="text-accent-500 hover:text-accent-400 transition-all duration-150">
+          <li className="text-accent-500 hover:text-accent-400 transition-all duration-300 transform hover:scale-125 hover:shadow-lg">
             <a
               href={SOCIAL_LINKS.twitter.link}
               target="_blank"
@@ -93,21 +79,22 @@ export default function Header(): React.ReactElement {
               <IoLogoTwitter className="text-3xl lg:text-4xl" />
             </a>
           </li>
-          <li className="text-accent-500 hover:text-accent-400 transition-all duration-150">
+          <li className="text-accent-500 hover:text-accent-400 transition-all duration-300 transform hover:scale-125 hover:shadow-lg">
             <a
               href={SOCIAL_LINKS.instagram.link}
               target="_blank"
               rel="noreferrer"
               aria-label={"ali reza rezayee's Instagram Account Link"}
             >
-              <AiFillInstagram className="text-3xl lg:text-4xl" />
+              <IoLogoInstagram className="text-3xl lg:text-4xl" />
             </a>
           </li>
-          <li className="text-accent-500 hover:text-accent-400 transition-all duration-150">
+          <li className="text-accent-500 hover:text-accent-400 transition-all duration-300 transform hover:scale-125 hover:shadow-lg">
             <a
               href={"/assets/alireza-cv.pdf"}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={"Download Ali Reza's Resume"}
             >
               <ResumeIcon
                 className="w-7 lg:w-8 text-accent-500 hover:text-accent-400"
