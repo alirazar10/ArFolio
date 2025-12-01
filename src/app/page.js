@@ -2,7 +2,7 @@ import { About, Contact, Experience, Hero, Works } from "@/components/pages";
 
 export default function Home() {
   return (
-    <div className="xl:max-w-[1024px] mx-auto">
+    <div className="xl:max-w-5xl mx-auto">
       <section
         name="home"
         id="home"

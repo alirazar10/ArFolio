@@ -13,7 +13,7 @@ export default function About() {
         <ScrollRevealWrapper>
           <div
             ref={experienceRef}
-            className="py-8 p-4 pt-6 lg:px-10 space-y-2 lg:space-y-3 lg:w-[100%] lg:pr-[35%] "
+            className="py-8 p-4 pt-6 lg:px-10 space-y-2 lg:space-y-3 lg:w-full lg:pr-[35%] "
             name="about-content"
           >
             <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-primary-50 py-2">

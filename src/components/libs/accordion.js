@@ -102,7 +102,7 @@ export const Accordion = ({ items }) => {
                       {item.skills.map((skill, index) => (
                         <span
                           key={index}
-                          className="px-2.5 py-2 bg-primary-100 text-secondary-300 text-xs rounded-xl bg-opacity-20"
+                          className="px-2.5 py-2 bg-primary-100 text-secondary-800 text-xs rounded-xl bg-opacity-20"
                         >
                           {skill}
                         </span>

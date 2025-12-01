@@ -15,7 +15,7 @@ export default function Sidebar() {
 
   return (
     <>
-      <div className="flex justify-end h-[60px] items-center fixed right-0 top-0 lg:hidden z-[100] ">
+      <div className="flex justify-end h-[60px] items-center fixed right-0 top-0 lg:hidden z-100 ">
         <span className="mx-4 cursor-pointer" onClick={handleMenu}>
           {!open ? (
             <IoMenu size={36} className="text-primary-50 " />
@@ -31,7 +31,7 @@ export default function Sidebar() {
             {MENU_ITEM.map((item) => (
               <li
                 key={item.value}
-                className={`text-primary-50 text-xl font-light border-b-2 border-accent-600 rounded-l-md w-full cursor-pointer p-4 px-5 bg-dark-accent-500 group hover:bg-secondary-600 h-[70px] mr-[-180px] hover:mr-[0px] transition-all duration-500`}
+                className={`text-primary-50 text-xl font-light border-b-2 border-accent-600 rounded-l-md w-full cursor-pointer p-4 px-5 bg-dark-accent-500 group hover:bg-secondary-600 h-[70px] mr-[-180px] hover:mr-0 transition-all duration-500`}
               >
                 <Link
                   href={`#${item.value}`}

@@ -32,7 +32,7 @@ export default function Header() {
 
   return (
     <div
-      className={` h-[60px] text-center fixed z-20  top-0 left-0 right-20 lg:right-0 transition duration-[400ms] ease-in ${
+      className={` h-[60px] text-center fixed z-20  top-0 left-0 right-20 lg:right-0 transition duration-400 ease-in ${
         showHeader ? "" : "transform -translate-y-full"
       }`}
     >

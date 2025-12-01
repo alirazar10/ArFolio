@@ -19,6 +19,11 @@ import Image from "next/image";
 export default function HomePage() {
   const [show, setShow] = useState(false);
   const heroImageRef = useRef(null);
+  const item1Ref = useRef(null);
+  const item2Ref = useRef(null);
+  const item3Ref = useRef(null);
+  const item4Ref = useRef(null);
+  const item5Ref = useRef(null);
   useEffect(() => {
     const timeout = setTimeout(() => setShow(true), 1000);
     return () => clearTimeout(timeout);
@@ -31,7 +36,7 @@ export default function HomePage() {
     setShow(false);
   };
   const item1 = {
-    ref: useRef(null),
+    ref: item1Ref,
     el: (
       <h4 className="text-primary-50 text-base md:text-xl lg:text-2xl font-bold inline lg:block pr-2">
         {hero.greeting}
@@ -39,7 +44,7 @@ export default function HomePage() {
     ),
   };
   const item2 = {
-    ref: useRef(null),
+    ref: item2Ref,
     el: (
       <h2 className="text-accent-500 text-2xl md:text-3xl lg:text-4xl font-bold inline lg:block mb-3">
         {hero.name}.
@@ -47,7 +52,7 @@ export default function HomePage() {
     ),
   };
   const item3 = {
-    ref: useRef(null),
+    ref: item3Ref,
     el: (
       <h1 className="text-primary-100 text-xl md:text-3xl lg:text-4xl font-bold mb-3 lg:leading-[2.8rem]">
         {hero.tagLine}
@@ -55,7 +60,7 @@ export default function HomePage() {
     ),
   };
   const item4 = {
-    ref: useRef(null),
+    ref: item4Ref,
     el: (
       <p className="text-primary-100 text-sm lg:text-base italic py-2 leading-6 lg:leading-7">
         {hero.description}
@@ -64,11 +69,11 @@ export default function HomePage() {
   };
 
   const item5 = {
-    ref: useRef(null),
+    ref: item5Ref,
     el: (
       <div className="py-2 pt-5 my-3">
         <Link
-          className="px-8 py-2 text-lg font-semibold outline outline-1 outline-primary-50 text-primary-50 hover:outline-accent-500 hover:text-accent-500 rounded-md"
+          className="px-8 py-2 text-lg font-semibold outline outline-primary-50 text-primary-50 hover:outline-accent-500 hover:text-accent-500 rounded-md"
           href={"#contact"}
           to={"contact"}
           spy={true}
