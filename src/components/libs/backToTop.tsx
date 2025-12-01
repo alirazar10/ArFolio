@@ -4,11 +4,13 @@ import { IoChevronUpCircle } from "react-icons/io5";
 import { Link, animateScroll as scroll, scrollSpy } from "react-scroll";
 
 const SCROLL_LIMIT = 250;
-export default function BackToTop() {
+
+export default function BackToTop(): React.ReactElement | null {
   const [scrollMoved, setScrollMoved] = useState(false);
   const toTop = 0;
-  const handleTrackingScroll = (e) => {
-    const scrollY = e.currentTarget.scrollY;
+
+  const handleTrackingScroll = (e: Event) => {
+    const scrollY = (e.currentTarget as Window).scrollY;
 
     console.log(e.currentTarget);
     if (scrollY > SCROLL_LIMIT) {
@@ -35,7 +37,5 @@ export default function BackToTop() {
         onClick={() => scroll.scrollToTop()}
       />
     </div>
-  ) : (
-    ""
-  );
+  ) : null;
 }

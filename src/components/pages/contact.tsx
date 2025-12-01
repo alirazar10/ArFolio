@@ -13,7 +13,7 @@ import { useForm, ValidationError } from "@formspree/react";
 import { MdMail } from "react-icons/md";
 import ScrollRevealWrapper from "../libs/scrollRevealWrapper";
 
-export default function Contact() {
+export default function Contact(): React.ReactElement {
   const [state, handleSubmit] = useForm("xoqzwabz");
 
   return (

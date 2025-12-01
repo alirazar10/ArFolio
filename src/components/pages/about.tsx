@@ -4,17 +4,17 @@ import { useRef } from "react";
 import { Skills } from "../libs";
 import ScrollRevealWrapper from "../libs/scrollRevealWrapper";
 
-export default function About() {
-  const experienceRef = useRef(null);
+export default function About(): React.ReactElement {
+  const experienceRef = useRef<HTMLDivElement>(null);
 
   return (
     <div className="flex justify-center items-center w-full h-full">
       <div className="relative ">
-        <ScrollRevealWrapper>
+        <ScrollRevealWrapper options={{}}>
           <div
             ref={experienceRef}
             className="py-8 p-4 pt-6 lg:px-10 space-y-2 lg:space-y-3 lg:w-full lg:pr-[35%] "
-            name="about-content"
+            data-name="about-content"
           >
             <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-primary-50 py-2">
               The Story Behind the Pixel
@@ -54,7 +54,6 @@ export default function About() {
               <a
                 className="px-8 py-2 text-lg font-semibold outline outline-1 outline-primary-50 text-primary-50 hover:outline-accent-500 hover:text-accent-500 rounded-md mt-6 inline-block"
                 href={"/assets/alireza-cv.pdf"}
-                alt="alt text"
                 target="_blank"
                 rel="noopener noreferrer"
               >

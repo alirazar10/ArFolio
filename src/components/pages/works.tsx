@@ -6,9 +6,9 @@ import { IoLogoGithub, IoLogoGooglePlaystore } from "react-icons/io5";
 import { MdOutlineOpenInNew } from "react-icons/md";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 const COL_LIMIT = 3;
-export default function Works() {
-  const revealProjects = useRef([]);
-  const revealTitle = useRef(null);
+export default function Works(): React.ReactElement {
+  const revealProjects = useRef<(HTMLDivElement | null)[]>([]);
+  const revealTitle = useRef<HTMLDivElement>(null);
   const [displayedProjects, setDisplayedProjects] = useState(
     projects.slice(0, COL_LIMIT)
   );
@@ -17,11 +17,15 @@ export default function Works() {
     if (revealProjects.current.length > 0) {
       const delay = 300;
       const sr = (await import("scrollreveal")).default;
-      sr().reveal(revealTitle.current, srConfig(delay));
+      if (revealTitle.current) {
+        sr().reveal(revealTitle.current, srConfig(delay));
+      }
 
-      revealProjects.current.forEach((ref, i) =>
-        sr().reveal(ref, srConfig(i * 100 + delay))
-      );
+      revealProjects.current.forEach((ref, i) => {
+        if (ref) {
+          sr().reveal(ref, srConfig(i * 100 + delay));
+        }
+      });
     }
   }
 
@@ -57,7 +61,7 @@ export default function Works() {
         >
           {displayedProjects &&
             displayedProjects.map((item, index) => {
-              const itemsRef = createRef(null);
+              const itemsRef = createRef<HTMLDivElement>();
               return (
                 <CSSTransition
                   key={index}
@@ -71,7 +75,7 @@ export default function Works() {
                     key={index}
                     ref={(el) => {
                       itemsRef.current = el;
-                      return (revealProjects.current[index] = el);
+                      revealProjects.current[index] = el;
                     }}
                     style={{
                       transitionDelay: `${

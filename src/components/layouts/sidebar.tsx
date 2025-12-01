@@ -6,7 +6,7 @@ import { IoMenu } from "react-icons/io5";
 import { MdMenuOpen } from "react-icons/md";
 import { Link, animateScroll as scroll, scrollSpy } from "react-scroll";
 
-export default function Sidebar() {
+export default function Sidebar(): React.ReactElement {
   const [open, setOpen] = useState(false);
 
   const handleMenu = () => {

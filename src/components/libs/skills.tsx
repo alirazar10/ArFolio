@@ -1,4 +1,13 @@
-const Skills = ({ skills }) => {
+interface Skill {
+  name: string;
+  rate?: number;
+}
+
+interface SkillsProps {
+  skills: Skill[];
+}
+
+const Skills = ({ skills }: SkillsProps): React.ReactElement => {
   const halfLength = Math.ceil(skills.length / 2);
   const leftColumn = skills.slice(0, halfLength);
   const rightColumn = skills.slice(halfLength);

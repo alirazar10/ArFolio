@@ -3,9 +3,13 @@ import Footer from "./footer";
 import Header from "./header";
 import Sidebar from "./sidebar";
 
-export default function Layout({ children }) {
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+export default function Layout({ children }: LayoutProps): React.ReactElement {
   return (
-    <div className="w-full min-h-screen " name="wrapper">
+    <div className="w-full min-h-screen " data-name="wrapper">
       <Header />
       <Sidebar />
       <main className="min-h-0 bg-primary-500 h-full px-5">{children}</main>

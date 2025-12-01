@@ -5,7 +5,7 @@ import ScrollRevealWrapper from "../libs/scrollRevealWrapper";
 import { useState } from "react";
 
 const ITEM_LIMIT = 3;
-export default function Experience() {
+export default function Experience(): React.ReactElement {
   const [experienceItems, setExperienceItems] = useState(
     EXPERIENCE.slice(0, ITEM_LIMIT)
   );

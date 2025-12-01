@@ -1,4 +1,4 @@
-export default function Footer() {
+export default function Footer(): React.ReactElement {
   return (
     <footer className="text-center text-primary-100 p-5 space-y-2">
       <p className="text-center text-primary-100 font-bold text-base leading-6">
@@ -7,7 +7,6 @@ export default function Footer() {
           href="https://github.com/alirazar10/ArFolio"
           target="_blank"
           rel="noreferrer"
-          alt="Ali Reza Rezayee (ARFolio) GitHub source code. (Ali Reza Rezayee)"
           className="text-accent-500 font-bold"
         >
           ArFolio

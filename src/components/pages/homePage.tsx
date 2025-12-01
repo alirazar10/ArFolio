@@ -16,14 +16,14 @@ import Image from "next/image";
 //   responsive,
 // } from "@cloudinary/react";
 
-export default function HomePage() {
-  const [show, setShow] = useState(false);
-  const heroImageRef = useRef(null);
-  const item1Ref = useRef(null);
-  const item2Ref = useRef(null);
-  const item3Ref = useRef(null);
-  const item4Ref = useRef(null);
-  const item5Ref = useRef(null);
+export default function HomePage(): React.ReactElement {
+  const [show, setShow] = useState<boolean>(false);
+  const heroImageRef = useRef<HTMLDivElement>(null);
+  const item1Ref = useRef<HTMLDivElement>(null);
+  const item2Ref = useRef<HTMLDivElement>(null);
+  const item3Ref = useRef<HTMLDivElement>(null);
+  const item4Ref = useRef<HTMLDivElement>(null);
+  const item5Ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const timeout = setTimeout(() => setShow(true), 1000);
     return () => clearTimeout(timeout);
@@ -89,7 +89,7 @@ export default function HomePage() {
     ),
   };
   const heroContent = [item1, item2, item3, item4, item5];
-
+  console.log(heroImage.imagePublicId);
   return (
     <div className="w-full max-h-max">
       <div className="overflow-hidden rounded-md py-5 w-full h-full">
@@ -108,9 +108,9 @@ export default function HomePage() {
               className="h-[50vh] w-[80vw]  rounded-md  mx-auto lg:mx-0  lg:h-full lg:w-[35%] overflow-hidden  lg:absolute lg:top-0 lg:right-0 lg:bottom-0 hover:shadow-primary"
               style={{ transitionDelay: "300sm" }}
             >
-              <div className="relative h-full w-full mx-auto lg:mx-0  lg:h-full lg:w-full hover:border z-10 lg:z-0 border-accent-700 filter bg-primary-500  lg:bg-blend-luminosity bg-cover bg-center lg:opacity-20 lg:hover:opacity-60 transition-all duration-150 overflow-hidden rounded-md">
+              <div className="relative h-full w-full mx-auto lg:mx-0  lg:h-full lg:w-full hover:border z-10 lg:z-0 border-accent-700 filter bg-primary-500  lg:bg-blend-luminosity bg-cover bg-center lg:opacity-20 lg:hover:opacity-60 transition-all duration-150 overflow-hidden rounded-md" style={{ transitionDelay: "300sm" }}>
                 <Image
-                  src={generateImageUrl(heroImage.imagePublicId).toURL()}
+                  src={generateImageUrl(heroImage.imagePublicId)}
                   width={1280}
                   height={720}
                   className="object-center object-cover min-h-full h-full w-full"
@@ -121,11 +121,11 @@ export default function HomePage() {
             </div>
           </CSSTransition>
         )}
-        <div className=" h-full lg:h-fit py-3  relative -mt-20 lg:mt-0 border-none lg:border-none border-primary-700 bg-secondary-500  flex flex-col justify-center items-center lg:items-start rounded-md bg-opacity-0 lg:max-w-[65%]">
+        <div className=" h-full lg:h-fit py-3  relative -mt-20 lg:mt-0 border-none lg:border-none  flex flex-col justify-center items-center lg:items-start lg:max-w-[65%]">
           {show && (
             <TransitionGroup
               component={"div"}
-              className={`mx-2 px-2 py-5 pt-24 lg:p-2 lg:py-5  space-y-2  lg:text-left`}
+              className={`px-5 py-5 pt-24 lg:p-2 lg:py-5  space-y-2  lg:text-left border-primary-700 bg-secondary-500  rounded-md bg-opacity-0`}
             >
               {heroContent.map(({ ref, el }, index) => (
                 <CSSTransition

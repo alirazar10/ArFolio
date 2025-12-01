@@ -3,8 +3,20 @@ import { srConfig } from "@/configs/srConfig";
 // import sr from "@/utils/scrollReveal";
 import { useEffect, useRef } from "react";
 
-export default function ScrollRevealWrapper({ options, children }) {
-  const container = useRef(null);
+interface ScrollRevealOptions {
+  delay?: number;
+  viewFactor?: number;
+  origin?: string;
+  [key: string]: any;
+}
+
+interface ScrollRevealWrapperProps {
+  options?: ScrollRevealOptions;
+  children: React.ReactNode;
+}
+
+export default function ScrollRevealWrapper({ options, children }: ScrollRevealWrapperProps): React.ReactElement {
+  const container = useRef<HTMLDivElement>(null);
   useEffect(() => {
     async function animate() {
       if (container.current) {

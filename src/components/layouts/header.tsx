@@ -13,9 +13,11 @@ import {
 import {
   TbBrandFiverr
 } from "react-icons/tb";
-export default function Header() {
+
+export default function Header(): React.ReactElement {
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollPos, setLastScrollPos] = useState(0);
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
@@ -38,7 +40,7 @@ export default function Header() {
     >
       <header
         className="flex justify-start lg:justify-center items-center h-full lg:mx-auto"
-        name="social-media"
+        data-name="social-media"
       >
         <ul className="flex justify-start lg:justify-center items-center h-full gap-3 text-2xl px-4 text-accent-500 bg-secondary-500 bg-opacity-50 rounded-br-md lg:rounded-b-md">
           <li className="text-accent-500 hover:text-accent-400 transition-all duration-150">
@@ -104,12 +106,12 @@ export default function Header() {
           <li className="text-accent-500 hover:text-accent-400 transition-all duration-150">
             <a
               href={"/assets/alireza-cv.pdf"}
-              alt="ali reza rezayee's CV in PDF Format"
               target="_blank"
               rel="noopener noreferrer"
             >
               <ResumeIcon
                 className="w-7 lg:w-8 text-accent-500 hover:text-accent-400"
+                size={32}
                 color={"#FF5722"}
               />
             </a>

@@ -5,18 +5,35 @@ import { MdAdd, MdOutlineOpenInNew, MdRemove } from "react-icons/md";
 import { IoLocation } from "react-icons/io5";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
-export const Accordion = ({ items }) => {
-  const [activeIndex, setActiveIndex] = useState(null);
-  const [activeHeight, setActiveHeight] = useState(null);
+interface AccordionItem {
+  title: string;
+  start_date: string;
+  end_date: string;
+  location: string;
+  link?: string | boolean;
+  description: string;
+  skills: string[];
+}
 
-  const toggleItem = (index) => {
-    let height = document.getElementById(index).firstChild.clientHeight;
-    if (index === activeIndex) {
-      setActiveIndex(null);
-      setActiveHeight(null);
-    } else {
-      setActiveIndex(index);
-      setActiveHeight(height);
+interface AccordionProps {
+  items: AccordionItem[];
+}
+
+export const Accordion = ({ items }: AccordionProps): React.ReactElement => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [activeHeight, setActiveHeight] = useState<number | null>(null);
+
+  const toggleItem = (index: number) => {
+    const element = document.getElementById(index.toString());
+    if (element) {
+      let height = element.firstElementChild?.clientHeight || 0;
+      if (index === activeIndex) {
+        setActiveIndex(null);
+        setActiveHeight(null);
+      } else {
+        setActiveIndex(index);
+        setActiveHeight(height);
+      }
     }
   };
 
@@ -24,7 +41,7 @@ export const Accordion = ({ items }) => {
     <div className=" rounded-md w-full">
       <TransitionGroup component={null}>
         {items?.map((item, index) => {
-          const itemsRef = createRef(null);
+          const itemsRef = createRef<HTMLDivElement>();
           return (
             <CSSTransition
               key={index}
@@ -64,10 +81,10 @@ export const Accordion = ({ items }) => {
                 </div>
                 <div
                   className={`overflow-hidden ease-in-out transition-[height]  duration-500`}
-                  id={index}
+                  id={index.toString()}
                   style={
                     activeIndex === index
-                      ? { height: activeHeight + 10 }
+                      ? { height: activeHeight ? activeHeight + 10 : 0 }
                       : { height: 0 }
                   }
                 >
@@ -77,7 +94,7 @@ export const Accordion = ({ items }) => {
                       <span>{item.location}</span>
                     </p>
                     <p className="text-sm text-secondary-300 pb-4 flex items-center gap-2">
-                      {item.link && (
+                      {item.link && typeof item.link === 'string' && (
                         <>
                           <MdOutlineOpenInNew
                             size={20}
@@ -99,9 +116,9 @@ export const Accordion = ({ items }) => {
                       {item.description}{" "}
                     </p>
                     <div className="flex gap-2 flex-wrap mt-2.5">
-                      {item.skills.map((skill, index) => (
+                      {item.skills.map((skill, skillIndex) => (
                         <span
-                          key={index}
+                          key={skillIndex}
                           className="px-2.5 py-2 bg-primary-100 text-secondary-800 text-xs rounded-xl bg-opacity-20"
                         >
                           {skill}

@@ -2,7 +2,22 @@
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { useState, useRef, useEffect } from "react";
 
-export function Fade({ show, children }) {
+interface FadeProps {
+  show: boolean;
+  children: React.ReactNode;
+}
+
+interface FadeUpProps {
+  show: boolean;
+  children: React.ReactNode;
+}
+
+interface FadeDownProps {
+  show: boolean;
+  children: React.ReactNode;
+}
+
+export function Fade({ show, children }: FadeProps): React.ReactElement {
   const [fade, setFade] = useState(false);
   useEffect(() => {
     setTimeout(() => {
@@ -19,9 +34,9 @@ export function Fade({ show, children }) {
   );
 }
 
-export function FadeUp({ show, children }) {
+export function FadeUp({ show, children }: FadeUpProps): React.ReactElement {
   const [fadeUp, setFadeUp] = useState(false);
-  const fadeUpRef = useRef(null);
+  const fadeUpRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     setFadeUp(show);
   }, [fadeUp, show]);
@@ -33,14 +48,14 @@ export function FadeUp({ show, children }) {
       classNames="fadeup"
       unmountOnExit
     >
-      <div ref={fadeUpRef} style={{ transitionDelay: "300sm" }}>
+      <div ref={fadeUpRef} style={{ transitionDelay: "300ms" }}>
         {children}
       </div>
     </CSSTransition>
   );
 }
 
-export function FadeDown({ show, children }) {
+export function FadeDown({ show, children }: FadeDownProps): React.ReactElement {
   return (
     <CSSTransition in={show} timeout={300} classNames="fadedown" unmountOnExit>
       <div>{children}</div>
