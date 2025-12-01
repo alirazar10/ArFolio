@@ -23,23 +23,39 @@ interface RootLayoutProps {
 // Metadata for Next.js
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || "https://your-portfolio.com"),
-  title: META_TAGS.title,
+  title: {
+    default: META_TAGS.title,
+    template: "%s | Ali Reza - Full Stack Developer",
+  },
   description: META_TAGS.description,
-  keywords: ["Full Stack Developer", "TypeScript", "React", "Next.js", "Laravel", "Web Developer"],
+  keywords: [
+    "Full Stack Developer",
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Laravel",
+    "Web Developer",
+    "JavaScript",
+    "Node.js",
+    "PHP",
+  ],
   authors: [{ name: "Ali Reza Rezayee" }],
   creator: "Ali Reza Rezayee",
+  robots: "index, follow",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: META_TAGS.url,
     title: META_TAGS.title,
     description: META_TAGS.description,
+    siteName: "Ali Reza Rezayee - Full Stack Developer",
     images: [
       {
         url: META_TAGS.image,
         width: 1200,
         height: 630,
         alt: "Ali Reza - Full Stack Developer",
+        type: "image/jpeg",
       },
     ],
   },
@@ -58,6 +74,15 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: "/site.webmanifest",
+  applicationName: "ArFolio",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "ArFolio",
+  },
+  formatDetection: {
+    telephone: false,
+  },
 };
 
 export default function RootLayout({ children }: RootLayoutProps) {

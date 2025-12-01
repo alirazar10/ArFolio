@@ -1,13 +1,12 @@
 "use client";
 
-import { useEffect } from "react";
 import { MetaTags } from "@/components/libs";
 
+/**
+ * Head component for App Router
+ * Renders structured data (JSON-LD) for SEO
+ * All other meta tags are handled by metadata export in layout.tsx
+ */
 export default function Head(): React.ReactElement {
-  useEffect(() => {
-    // Initialize analytics tracking for route changes
-    // Note: GA and Hotjar are now initialized in layout.tsx via Script components
-  }, []);
-
   return <MetaTags />;
 }
