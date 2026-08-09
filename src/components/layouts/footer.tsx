@@ -12,7 +12,7 @@ export default function Footer(): React.ReactElement {
           ArFolio
         </a>{" "}
       </p>
-      <p className="text-center text-primary-100 text-sm font-semibold">
+      <p className="text-center text-primary-300 font-mono text-xs tracking-wide">
         Made with ☕ and <span> &#x2764;&#xFE0F; </span> by Ali Reza &copy;{" "}
         {new Date().getFullYear()}
       </p>

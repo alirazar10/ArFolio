@@ -1,7 +1,7 @@
 "use client";
-import { EXPERIENCE } from "@/content/constants";
+import { EXPERIENCE } from "@/content";
 import { Accordion } from "../libs";
-import ScrollRevealWrapper from "../libs/scrollRevealWrapper";
+import Reveal from "../libs/reveal";
 import { useState } from "react";
 
 const ITEM_LIMIT = 3;
@@ -23,39 +23,40 @@ export default function Experience(): React.ReactElement {
     setExperienceItems(experienceItems.slice(0, ITEM_LIMIT));
   };
   return (
-    <>
-      <div className="min-h-screen flex justify-center items-center max-w-3xl mx-auto">
-        <div className="w-full flex flex-col">
-          <ScrollRevealWrapper options={{ delay: 300 }}>
-            <h2 className="text-3xl font-bold text-primary-50 py-5 lg:py-10 text-left">
-              Where I Worked
-            </h2>
-          </ScrollRevealWrapper>
-          <ScrollRevealWrapper options={{ delay: 200 }}>
-            <Accordion items={experienceItems} />
+    <div className="flex justify-center items-center max-w-3xl mx-auto">
+      <div className="w-full flex flex-col">
+        <Reveal delay={100}>
+          <p className="font-mono text-accent-500 text-xs tracking-widest uppercase mb-3">
+            Experience
+          </p>
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-primary-50 mb-8">
+            Where I Worked
+          </h2>
+        </Reveal>
+        <Reveal delay={200}>
+          <Accordion items={experienceItems} />
 
-            <div className="text-center">
-              {experienceItems.length < EXPERIENCE.length ? (
-                <button
-                  type="button"
-                  className="text-white px-4 py-2 rounded-lg mt-4 outline outline-1 outline-primary-50 hover:outline-accent-500 hover:text-accent-500 transition-all duration-300 delay-300"
-                  onClick={handleLoadMore}
-                >
-                  Load More
-                </button>
-              ) : (
-                <button
-                  type="button"
-                  className="text-white px-4 py-2 rounded-lg mt-4 outline outline-1 outline-primary-50 hover:outline-accent-500 hover:text-accent-500 transition-all duration-300 delay-300"
-                  onClick={handleLoadLess}
-                >
-                  Load less
-                </button>
-              )}
-            </div>
-          </ScrollRevealWrapper>
-        </div>
+          <div className="text-center">
+            {experienceItems.length < EXPERIENCE.length ? (
+              <button
+                type="button"
+                className="font-mono text-xs tracking-widest uppercase text-primary-100 px-4 py-2 rounded-lg mt-8 border border-primary-50 hover:border-accent-500 hover:text-accent-500 transition-all duration-300"
+                onClick={handleLoadMore}
+              >
+                Load More
+              </button>
+            ) : (
+              <button
+                type="button"
+                className="font-mono text-xs tracking-widest uppercase text-primary-100 px-4 py-2 rounded-lg mt-8 border border-primary-50 hover:border-accent-500 hover:text-accent-500 transition-all duration-300"
+                onClick={handleLoadLess}
+              >
+                Load Less
+              </button>
+            )}
+          </div>
+        </Reveal>
       </div>
-    </>
+    </div>
   );
 }

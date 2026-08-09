@@ -1,9 +1,8 @@
 "use client";
 
-import { createRef, useState } from "react";
-import { IoAdd, IoArrowForward, IoRemove } from "react-icons/io5";
-import { IoLocation } from "react-icons/io5";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
+import { IoAdd, IoRemove, IoArrowForward, IoLocation } from "react-icons/io5";
 
 interface AccordionItem {
   title: string;
@@ -21,117 +20,92 @@ interface AccordionProps {
 
 export const Accordion = ({ items }: AccordionProps): React.ReactElement => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const [activeHeight, setActiveHeight] = useState<number | null>(null);
 
   const toggleItem = (index: number) => {
-    const element = document.getElementById(index.toString());
-    if (element) {
-      let height = element.firstElementChild?.clientHeight || 0;
-      if (index === activeIndex) {
-        setActiveIndex(null);
-        setActiveHeight(null);
-      } else {
-        setActiveIndex(index);
-        setActiveHeight(height);
-      }
-    }
+    setActiveIndex((current) => (current === index ? null : index));
   };
 
   return (
-    <div className=" rounded-md w-full">
-      <TransitionGroup component={null}>
-        {items?.map((item, index) => {
-          const itemsRef = createRef<HTMLDivElement>();
+    <div className="relative">
+      <div
+        className="absolute left-[7px] top-2 bottom-2 w-px bg-secondary-700"
+        aria-hidden
+      />
+      <ul className="space-y-6">
+        {items.map((item, index) => {
+          const isOpen = activeIndex === index;
           return (
-            <CSSTransition
-              key={index}
-              in={true}
-              nodeRef={itemsRef}
-              timeout={2000}
-              classNames="fadeup"
-              appear
-            >
-              <div
-                key={index}
-                ref={itemsRef}
-                className="mb-4"
-                style={{ transitionDelay: `${index + 1}00ms` }}
+            <li key={index} className="relative pl-8">
+              <span
+                className={`absolute left-0 top-2 h-3.5 w-3.5 rounded-full border-2 transition-colors duration-300 ${
+                  isOpen
+                    ? "bg-accent-500 border-accent-500"
+                    : "bg-primary-500 border-secondary-500"
+                }`}
+                aria-hidden
+              />
+              <button
+                type="button"
+                onClick={() => toggleItem(index)}
+                className="w-full text-left group"
               >
-                <div
-                  className={`w-full text-left px-4 py-2 font-medium focus:outline-none group bg-primary-800 ${
-                    activeIndex === index ? "bg-opacity-40" : "bg-opacity-100"
-                  } rounded-md hover:shadow-primary cursor-pointer ease-in-out  translate-y-0 hover:-translate-y-1.5 duration-300`}
-                  onClick={() => toggleItem(index)}
-                >
-                  <div className="flex items-center justify-between py-2 gap-2">
-                    <p className="flex flex-col items-start justify-between gap-1.5 w-full text-sm lg:text-[1.05rem] font-semibold text-primary-100">
-                      <span className={``}>{item.title}</span>
-                      <span className={`text-xs lg:text-sm font-medium `}>
-                        {item.start_date} - {item.end_date}
-                      </span>
-                    </p>
-                    <span className="py-2">
-                      {index !== activeIndex ? (
-                        <IoAdd className="text-2xl text-primary-50 font-bold transition ease-in-out duration-300" />
-                      ) : (
-                        <IoRemove className="text-2xl text-primary-50 font-bold" />
-                      )}
+                <div className="flex items-center justify-between gap-3">
+                  <p className="flex flex-col gap-1 text-sm lg:text-base font-semibold text-primary-100 group-hover:text-accent-500 transition-colors duration-300">
+                    <span>{item.title}</span>
+                    <span className="font-mono text-xs text-primary-300 tracking-wide">
+                      {item.start_date} - {item.end_date}
                     </span>
-                  </div>
+                  </p>
+                  {isOpen ? (
+                    <IoRemove className="text-xl text-accent-500 shrink-0" />
+                  ) : (
+                    <IoAdd className="text-xl text-primary-300 shrink-0" />
+                  )}
                 </div>
-                <div
-                  className={`overflow-hidden ease-in-out transition-[height]  duration-500`}
-                  id={index.toString()}
-                  style={
-                    activeIndex === index
-                      ? { height: activeHeight ? activeHeight + 10 : 0 }
-                      : { height: 0 }
-                  }
-                >
-                  <div className="px-4 py-4 mt-2 bg-secondary-500 text-primary-100 text-sm lg:text-base  text-justify rounded-md h-fit">
-                    <p className="text-sm text-secondary-300 pb-3 flex items-center gap-2">
-                      <IoLocation size={20} className="text-primary-50" />{" "}
-                      <span>{item.location}</span>
-                    </p>
-                    <p className="text-sm text-secondary-300 pb-4 flex items-center gap-2">
-                      {item.link && typeof item.link === 'string' && (
-                        <>
-                          <IoArrowForward
-                            size={20}
-                            className="text-primary-50"
-                          />{" "}
-                          <a
-                            href={item.link}
-                            aria-label={"Website link"}
-                            target="_blank"
-                            rel="noreferrer"
-                          >
-                            {item.link}
-                          </a>
-                        </>
-                      )}
-                    </p>
-                    <p className="text-sm text-primary-100">
-                      {" "}
-                      {item.description}{" "}
-                    </p>
-                    <div className="flex gap-2 flex-wrap mt-2.5">
-                      {item.skills.map((skill, skillIndex) => (
-                        <span
-                          key={skillIndex}
-                          className="px-2.5 py-2 bg-primary-100 text-secondary-800 text-xs rounded-xl bg-opacity-20"
+              </button>
+              <AnimatePresence initial={false}>
+                {isOpen && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: [0.645, 0.045, 0.355, 1] }}
+                    className="overflow-hidden"
+                  >
+                    <div className="mt-3 p-4 lg:p-5 bg-secondary-500 border border-secondary-700 rounded-lg text-sm lg:text-base">
+                      <p className="flex items-center gap-2 text-xs lg:text-sm text-primary-300 mb-3">
+                        <IoLocation size={16} /> <span>{item.location}</span>
+                      </p>
+                      {typeof item.link === "string" && item.link && (
+                        <a
+                          href={item.link}
+                          target="_blank"
+                          rel="noreferrer"
+                          aria-label="Website link"
+                          className="flex items-center gap-2 text-xs lg:text-sm text-primary-300 hover:text-accent-500 transition-colors duration-300 mb-3"
                         >
-                          {skill}
-                        </span>
-                      ))}
+                          <IoArrowForward size={16} /> <span>{item.link}</span>
+                        </a>
+                      )}
+                      <p className="text-primary-200 leading-6">{item.description}</p>
+                      <div className="flex gap-2 flex-wrap mt-3">
+                        {item.skills.map((skill, skillIndex) => (
+                          <span
+                            key={skillIndex}
+                            className="font-mono text-[10px] lg:text-xs px-2.5 py-1 rounded-full border border-secondary-600 text-primary-300"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </CSSTransition>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </li>
           );
         })}
-      </TransitionGroup>
+      </ul>
     </div>
   );
 };

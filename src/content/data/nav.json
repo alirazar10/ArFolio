@@ -1,0 +1,6 @@
+[
+  { "label": "About", "value": "about", "icon": "person" },
+  { "label": "Experience", "value": "experience", "icon": "briefcase" },
+  { "label": "Work", "value": "work", "icon": "code" },
+  { "label": "Contact", "value": "contact", "icon": "mail" }
+]

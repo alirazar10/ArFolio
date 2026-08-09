@@ -6,14 +6,14 @@ interface ResumeIconProps {
 
 export default function ResumeIcon({
   className,
-  size,
+  size = 24,
   color,
 }: ResumeIconProps) {
   return (
     <svg
-      width="100%"
-      height="100%"
-      className={`${className} `}
+      width={size}
+      height={size}
+      className={className}
       viewBox="0 0 24 23"
       fill="currentColor"
       stroke="currentColor"

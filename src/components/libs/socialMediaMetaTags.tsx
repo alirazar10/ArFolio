@@ -1,5 +1,5 @@
 import { generateImageUrl } from "./imageCreator";
-import { heroImage } from "@/utils/cloudinary";
+import { heroImage } from "@/configs/cloudinary";
 
 interface StructuredDataPerson {
   "@context": string;
@@ -18,7 +18,7 @@ interface StructuredDataPerson {
 }
 
 export default function MetaTags(): React.ReactElement {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://your-portfolio.com";
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://www.imali.dev";
   const imageUrl = generateImageUrl(heroImage.metaTagImage);
 
   // Structured Data for SEO (Schema.org Person markup)
@@ -26,13 +26,12 @@ export default function MetaTags(): React.ReactElement {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Ali Reza Rezayee",
-    jobTitle: "Full Stack Developer",
+    jobTitle: "Lead Full-Stack Software Engineer",
     description:
-      "Full-stack web developer with expertise in TypeScript, React, Next.js, Node.js, Laravel, and modern web technologies.",
+      "Lead Full-Stack Software Engineer with 9+ years of experience building and scaling production applications across FinTech, EdTech, and data-driven products.",
     url: baseUrl,
     sameAs: [
       "https://github.com/alirazar10",
-      "https://www.linkedin.com/in/alireza-r10/",
       "https://www.linkedin.com/in/alireza-r10/",
       "https://twitter.com/AlirazaR10",
       "https://www.instagram.com/aliraza.r10/",
@@ -41,20 +40,22 @@ export default function MetaTags(): React.ReactElement {
     image: imageUrl,
     address: {
       "@type": "PostalAddress",
-      addressCountry: "CA",
+      addressCountry: "PK",
     },
     knowsAbout: [
       "JavaScript",
       "TypeScript",
+      "Python",
       "React.js",
       "Next.js",
       "Node.js",
-      "Python",
-      "PHP",
+      "Django",
       "Laravel",
       "TailwindCSS",
       "PostgreSQL",
       "MySQL",
+      "OpenAI",
+      "RAG",
     ],
   };
 

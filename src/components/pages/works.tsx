@@ -1,43 +1,20 @@
 "use client";
-import { srConfig } from "@/configs/srConfig";
-import { projects } from "@/content/constants";
-import { createRef, useEffect, useRef, useState } from "react";
+import { projects } from "@/content";
+import { useState } from "react";
+import { motion } from "motion/react";
 import { IoLogoGithub, IoLogoGooglePlaystore, IoArrowForward } from "react-icons/io5";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
+import Reveal from "../libs/reveal";
+import { fadeUp } from "@/configs/motion";
+
 const COL_LIMIT = 3;
 export default function Works(): React.ReactElement {
-  const revealProjects = useRef<(HTMLDivElement | null)[]>([]);
-  const revealTitle = useRef<HTMLDivElement>(null);
   const [displayedProjects, setDisplayedProjects] = useState(
     projects.slice(0, COL_LIMIT)
   );
 
-  async function handleReveal() {
-    if (revealProjects.current.length > 0) {
-      const delay = 300;
-      const sr = (await import("scrollreveal")).default;
-      if (revealTitle.current) {
-        sr().reveal(revealTitle.current, srConfig(delay));
-      }
-
-      revealProjects.current.forEach((ref, i) => {
-        if (ref) {
-          sr().reveal(ref, srConfig(i * 100 + delay));
-        }
-      });
-    }
-  }
-
-  useEffect(() => {
-    handleReveal();
-  }, []);
-
   const loadMore = () => {
     const currentLength = displayedProjects.length;
-    const nextProjects = projects.slice(
-      currentLength,
-      currentLength + COL_LIMIT
-    );
+    const nextProjects = projects.slice(currentLength, currentLength + COL_LIMIT);
     setDisplayedProjects([...displayedProjects, ...nextProjects]);
   };
 
@@ -47,113 +24,96 @@ export default function Works(): React.ReactElement {
 
   return (
     <div className="h-full flex flex-col justify-start items-start w-full">
-      <h2
-        ref={revealTitle}
-        className="text-xl md:text-3xl lg:text-4xl font-bold text-primary-50 py-2 lg:p-0 lg:leading-[2.8]"
-      >
-        Work Showcase
-      </h2>
-      <div className="">
-        <TransitionGroup
-          component={"div"}
-          className={`grid grid-cols-1 lg:grid-cols-3 gap-4`}
-        >
-          {displayedProjects &&
-            displayedProjects.map((item, index) => {
-              const itemsRef = createRef<HTMLDivElement>();
-              return (
-                <CSSTransition
-                  key={index}
-                  in={true}
-                  nodeRef={itemsRef}
-                  classNames="fadeup"
-                  timeout={index >= COL_LIMIT ? (index - COL_LIMIT) * 300 : 300}
-                  exit={false}
-                >
-                  <div
-                    key={index}
-                    ref={(el) => {
-                      itemsRef.current = el;
-                      revealProjects.current[index] = el;
-                    }}
-                    style={{
-                      transitionDelay: `${
-                        index >= COL_LIMIT ? (index - COL_LIMIT) * 100 : 0
-                      }ms`,
-                    }}
-                    className="flex flex-col bg-secondary-500 p-4 group pt-6 shadow-primary hover:primary-lg border border-primary-700 hover:border-primary-400 rounded-md ease-in-out  translate-y-0 hover:-translate-y-1.5 duration-300"
+      <Reveal>
+        <p className="font-mono text-accent-500 text-xs tracking-widest uppercase mb-3">
+          Projects
+        </p>
+        <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-primary-50 mb-8">
+          Work Showcase
+        </h2>
+      </Reveal>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 w-full">
+        {displayedProjects.map((item, index) => (
+          <motion.div
+            key={item.title}
+            initial="hidden"
+            animate="visible"
+            variants={fadeUp}
+            transition={{
+              duration: 0.4,
+              delay: (index % COL_LIMIT) * 0.1,
+              ease: [0.645, 0.045, 0.355, 1],
+            }}
+            className="group flex flex-col bg-secondary-500 p-5 pt-6 border border-secondary-700 hover:border-accent-500/50 shadow-primary rounded-lg translate-y-0 hover:-translate-y-1.5 transition-all duration-300"
+          >
+            <h3 className="font-display text-xl font-bold text-primary-100 group-hover:text-accent-500 transition-colors duration-300 mb-1">
+              {item.title}
+            </h3>
+            <p className="font-mono text-[11px] text-primary-400 mb-3">{item.date}</p>
+            <div className="h-full flex flex-col justify-between">
+              <p className="text-primary-300 text-sm lg:text-base leading-6">
+                {item.description}
+              </p>
+              <div className="flex gap-2 flex-wrap mt-4">
+                {item.technologies.map((tech, i) => (
+                  <span
+                    key={i}
+                    className="font-mono text-[10px] px-2.5 py-1 rounded-full border border-secondary-600 text-primary-300"
                   >
-                    <h2 className="text-primary-100 transition-all duration-300 group-hover:text-accent-500 font-bold py-3 text-2xl">
-                      {item.title}
-                    </h2>
-                    <div className="h-full flex flex-col justify-between">
-                      <p className="text-primary-100 text-sm lg:text-base  py-2 text-justify">
-                        {item.description}
-                      </p>
-
-                      <p className="text-[#8892B0] text-xs lg:text-sm pt-4 text-justify flex gap-2 flex-wrap">
-                        {item.technologies.map((tech, index) => (
-                          <span
-                            key={index}
-                            className="px-2.5 py-2 bg-primary-100 text-secondary-800 text-xs rounded-xl bg-opacity-20"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </p>
-                    </div>
-                    <div className="flex justify-end items-center mt-4 gap-2">
-                      {item.website_link && (
-                        <a
-                          href={item.website_link}
-                          aria-label={"Website link"}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="transition-all duration-300 transform hover:scale-125"
-                        >
-                          <IoArrowForward className="text-xl lg:text-2xl text-primary-50 hover:text-accent-400 cursor-pointer" />
-                        </a>
-                      )}
-                      {item.github_link && (
-                        <a
-                          href={item.github_link}
-                          aria-label={"GitGub link"}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="transition-all duration-300 transform hover:scale-125"
-                        >
-                          <IoLogoGithub className="text-xl lg:text-2xl text-primary-50 hover:text-accent-400 cursor-pointer" />
-                        </a>
-                      )}
-                      {item.playstore_link && (
-                        <a
-                          href={item.playstore_link}
-                          aria-label={"playstore link"}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="transition-all duration-300 transform hover:scale-125"
-                        >
-                          <IoLogoGooglePlaystore className="text-xl lg:text-2xl text-primary-50 hover:text-accent-400 cursor-pointer" />
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                </CSSTransition>
-              );
-            })}
-        </TransitionGroup>
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="flex justify-end items-center mt-4 gap-3">
+              {item.website_link && (
+                <a
+                  href={item.website_link}
+                  aria-label="Website link"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="transition-transform duration-300 hover:scale-125"
+                >
+                  <IoArrowForward className="text-xl text-primary-200 hover:text-accent-500" />
+                </a>
+              )}
+              {item.github_link && (
+                <a
+                  href={item.github_link}
+                  aria-label="GitHub link"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="transition-transform duration-300 hover:scale-125"
+                >
+                  <IoLogoGithub className="text-xl text-primary-200 hover:text-accent-500" />
+                </a>
+              )}
+              {item.playstore_link && (
+                <a
+                  href={item.playstore_link}
+                  aria-label="Playstore link"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="transition-transform duration-300 hover:scale-125"
+                >
+                  <IoLogoGooglePlaystore className="text-xl text-primary-200 hover:text-accent-500" />
+                </a>
+              )}
+            </div>
+          </motion.div>
+        ))}
       </div>
-      <div className="text-center w-full mt-6">
+      <div className="text-center w-full mt-8">
         {displayedProjects.length < projects.length ? (
           <button
-            className="text-white px-6 py-2 rounded-lg mt-4 outline-2 outline-primary-50 hover:outline-accent-500 hover:text-accent-500 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+            className="font-mono text-xs tracking-widest uppercase text-primary-100 px-6 py-2 rounded-lg border border-primary-50 hover:border-accent-500 hover:text-accent-500 transition-all duration-300"
             onClick={loadMore}
           >
             Load More
           </button>
         ) : (
           <button
-            className="text-white px-6 py-2 rounded-lg mt-4 outline-2 outline-primary-50 hover:outline-accent-500 hover:text-accent-500 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+            className="font-mono text-xs tracking-widest uppercase text-primary-100 px-6 py-2 rounded-lg border border-primary-50 hover:border-accent-500 hover:text-accent-500 transition-all duration-300"
             onClick={showLess}
           >
             Show Less

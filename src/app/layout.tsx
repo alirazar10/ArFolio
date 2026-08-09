@@ -1,19 +1,32 @@
 import "./globals.css";
-import "../styles/transitionStyle.css";
 
-import { Montserrat } from 'next/font/google';
-import { Metadata } from 'next';
+import { Space_Grotesk, Inter, JetBrains_Mono } from 'next/font/google';
+import { Metadata, Viewport } from 'next';
 import Layout from "@/components/layouts/layout";
 import Script from "next/script";
 import { ReactNode } from "react";
 import { PerformanceOptimizer } from "@/components/libs/performance";
 import { MetaTags } from "@/components/libs";
-import { META_TAGS } from "@/content/metaTag";
+import { META_TAGS } from "@/content";
+import { generateImageUrl } from "@/components/libs/imageCreator";
+import { heroImage } from "@/configs/cloudinary";
 
-const montserrat = Montserrat({
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  style: ["normal", "italic"],
+const DEFAULT_BASE_URL = "https://www.imali.dev";
+const socialImageUrl = generateImageUrl(heroImage.metaTagImage);
+
+const bodyFont = Inter({
   subsets: ["latin"],
+  variable: "--font-body",
+});
+
+const displayFont = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-display",
+});
+
+const monoFont = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
 });
 
 interface RootLayoutProps {
@@ -22,39 +35,53 @@ interface RootLayoutProps {
 
 // Metadata for Next.js
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || "https://your-portfolio.com"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || DEFAULT_BASE_URL),
   title: {
     default: META_TAGS.title,
-    template: "%s | Ali Reza - Full Stack Developer",
+    template: "%s | Ali Reza - Lead Full-Stack Software Engineer",
   },
   description: META_TAGS.description,
   keywords: [
-    "Full Stack Developer",
+    "Lead Full-Stack Software Engineer",
     "TypeScript",
     "React",
     "Next.js",
-    "Laravel",
-    "Web Developer",
-    "JavaScript",
+    "Python",
     "Node.js",
-    "PHP",
+    "FinTech",
+    "EdTech",
+    "AI Integration",
+    "PostgreSQL",
   ],
   authors: [{ name: "Ali Reza Rezayee" }],
   creator: "Ali Reza Rezayee",
-  robots: "index, follow",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: META_TAGS.url,
     title: META_TAGS.title,
     description: META_TAGS.description,
-    siteName: "Ali Reza Rezayee - Full Stack Developer",
+    siteName: "Ali Reza Rezayee - Lead Full-Stack Software Engineer",
     images: [
       {
-        url: META_TAGS.image,
+        url: socialImageUrl,
         width: 1200,
         height: 630,
-        alt: "Ali Reza - Full Stack Developer",
+        alt: "Ali Reza - Lead Full-Stack Software Engineer",
         type: "image/jpeg",
       },
     ],
@@ -64,7 +91,7 @@ export const metadata: Metadata = {
     title: META_TAGS.title,
     description: META_TAGS.twitter.description,
     creator: META_TAGS.twitter.creator,
-    images: [META_TAGS.twitter.image.src],
+    images: [socialImageUrl],
   },
   icons: {
     icon: [
@@ -85,17 +112,17 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0B0C0F",
+};
+
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className="min-h-screen m-0 p-0">
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#0A192B" />
-      </head>
-
       <body
-        className={`${montserrat.className} bg-primary-500 min-h-screen m-0 p-0`}
+        className={`${bodyFont.variable} ${displayFont.variable} ${monoFont.variable} font-sans bg-primary-500 min-h-screen m-0 p-0`}
         id="top"
       >
         {/* Structured Data (JSON-LD) - Must be in body to avoid hydration mismatch */}
@@ -122,12 +149,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
             });
           `,
           }}
-        />
-
-        {/* Google Optimize */}
-        <Script
-          src="https://www.googleoptimize.com/optimize.js?id=OPT-P3RB9RT"
-          strategy="afterInteractive"
         />
 
         {/* Hotjar */}

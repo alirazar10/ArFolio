@@ -1,5 +1,5 @@
 import { fill, limitFill } from "@cloudinary/url-gen/actions/resize";
-import { cld } from "../../configs/clConfig";
+import { cld } from "@/configs/cloudinary";
 import { format, quality } from "@cloudinary/url-gen/actions/delivery";
 import { autoGravity } from "@cloudinary/url-gen/qualifiers/gravity";
 
