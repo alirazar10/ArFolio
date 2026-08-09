@@ -1,12 +1,93 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-@layer base{
-  html, body, *{
-    font-family: 'Montserrat', sans-serif;
-
+@theme {
+  --color-primary: #0B0C0F;
+  --color-secondary: #15171C;
+  --color-accent: #E8A33D;
+  --color-dark-accent: #08090B;
+  /* Graphite neutrals - page background & primary text */
+  --color-primary-50: #F6F6F5;
+  --color-primary-100: #E7E7E5;
+  --color-primary-200: #C9CAC7;
+  --color-primary-300: #9C9E9B;
+  --color-primary-400: #6B6E6F;
+  --color-primary-500: #0B0C0F;
+  --color-primary-600: #0A0B0D;
+  --color-primary-700: #08090B;
+  --color-primary-800: #060607;
+  --color-primary-900: #030304;
+  /* Slightly lighter graphite - cards, surfaces, form fields */
+  --color-secondary-50: #F3F3F2;
+  --color-secondary-100: #E5E5E4;
+  --color-secondary-200: #C6C7C7;
+  --color-secondary-300: #9FA1A1;
+  --color-secondary-400: #6E7071;
+  --color-secondary-500: #15171C;
+  --color-secondary-600: #1B1E24;
+  --color-secondary-700: #101216;
+  --color-secondary-800: #0D0E11;
+  --color-secondary-900: #08090B;
+  /* Warm amber accent */
+  --color-accent-50: #FDF6EA;
+  --color-accent-100: #FBEDD3;
+  --color-accent-200: #F5D9A0;
+  --color-accent-300: #EFC46D;
+  --color-accent-400: #ECB556;
+  --color-accent-500: #E8A33D;
+  --color-accent-600: #C98526;
+  --color-accent-700: #96631D;
+  --color-accent-800: #644314;
+  --color-accent-900: #33220A;
+  /* Deepest neutral - nav surfaces & overlays */
+  --color-dark-accent-50: #F2F2F2;
+  --color-dark-accent-100: #E1E1E1;
+  --color-dark-accent-200: #BFBFBF;
+  --color-dark-accent-300: #969696;
+  --color-dark-accent-400: #616161;
+  --color-dark-accent-500: #08090B;
+  --color-dark-accent-600: #07080A;
+  --color-dark-accent-700: #050506;
+  --color-dark-accent-800: #030304;
+  --color-dark-accent-900: #010102;
+  --shadow-primary: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  --shadow-primary-lg: 10px 20px 8px rgba(0, 0, 0, 0.50);
+  --background-image-background: url('/assets/images/4E6A5969.jpeg');
+  --breakpoint-lg: 992px;
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, "Courier New", monospace;
 }
+
+@layer base {
+  html,
+  body {
+    font-family: var(--font-sans);
+  }
+  body {
+    overflow-y: overlay;
+  }
+  body::-webkit-scrollbar {
+    width: 14px;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    height: 40px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    border: 4px solid transparent;
+    background-clip: content-box;
+    background-color: #E8A33D;
+    transition: background-color 0.3s ease;
+  }
+
+  body::-webkit-scrollbar-thumb:hover {
+    background-color: #ECB556;
+  }
+
+  body::-webkit-scrollbar-track {
+    width: 0px;
+  }
 }
 .transition-height {
   transition-property: height;

@@ -1,0 +1,8 @@
+{
+  "facebook": { "label": "Facebook", "icon": "facebook", "link": "https://www.facebook.com/aliraza.r01" },
+  "twitter": { "label": "Twitter", "icon": "twitter", "link": "https://twitter.com/AlirazaR10" },
+  "linkedin": { "label": "LinkedIn", "icon": "linkedin", "link": "https://www.linkedin.com/in/alireza-r10/" },
+  "github": { "label": "GitHub", "icon": "github", "link": "https://github.com/alirazar10" },
+  "fiverr": { "label": "Fiverr", "icon": "fiverr", "link": "https://www.fiverr.com/alirazar10" },
+  "instagram": { "label": "Instagram", "icon": "instagram", "link": "https://www.instagram.com/aliraza.r10/" }
+}

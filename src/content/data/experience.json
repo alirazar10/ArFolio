@@ -1,0 +1,68 @@
+[
+  {
+    "title": "Lead Software Engineer",
+    "company": "FundEvolve Inc.",
+    "link": "https://fundevolve.com",
+    "employment_type": "Full-time",
+    "start_date": "Nov 2022",
+    "end_date": "Present",
+    "location": "Ontario, Canada (Remote)",
+    "description": "Lead full-stack development of FundEvolve's core financial wellness platform, combining financial data, budgeting, financial planning, AI-powered insights, advisor collaboration, messaging, and notifications. Build complex financial workflows spanning budgeting, cash flow, net worth, assets, liabilities, investments, and goals, and contribute to Financial Path, Momentum Score, and personalized recommendation experiences that combine deterministic financial rules with LLM-generated contextual insights. Integrate financial data workflows with Plaid, Questrade, and Stripe, and contributed to specialized Django/Python AI services for financial content analysis and personalization. Improved application performance by 60%+ through architectural restructuring and technical-debt reduction, while leading and mentoring developers.",
+    "skills": ["Next.js", "React", "TypeScript", "Node.js", "Strapi", "PostgreSQL", "Tailwind CSS", "Django", "Python", "REST API", "Plaid", "Questrade", "OpenAI", "Docker"]
+  },
+  {
+    "title": "Co-Founder & COO, Lead Engineer",
+    "company": "BAMAA — YAR Learning Platform",
+    "link": "https://bamaa.org",
+    "employment_type": "Full-time",
+    "start_date": "2025",
+    "end_date": "Present",
+    "location": "Remote",
+    "description": "Co-founded and lead engineering for YAR, an AI-assisted learning platform built around the educational needs of Afghan students, with personalized practice, mastery tracking, progress insights, and Kankor exam preparation. Design and develop the core web application with Next.js, React, TypeScript, Tailwind CSS, React Query, and Supabase, and built the integration layer connecting the platform to Python/FastAPI and Lambda-based AI/ML services. Built AI-assisted learning workflows including handwritten-solution OCR extraction, AI-driven mistake analysis, question explanation generation, and mastery-based recommendations, plus a localized experience aligned with Afghan curriculum structures, including Dari/Persian localization.",
+    "skills": ["Next.js", "React", "TypeScript", "Tailwind CSS", "React Query", "Supabase", "REST API", "Python", "FastAPI", "AWS Lambda"]
+  },
+  {
+    "title": "Data Analyst",
+    "company": "Mustafa Group",
+    "link": false,
+    "employment_type": "Full-time",
+    "start_date": "Apr 2021",
+    "end_date": "Sep 2021",
+    "location": "Kabul, Afghanistan",
+    "description": "Scraped, cleaned, analyzed, and visualized business data using Python, Tableau, and Octoparse to support reporting and decision-making. Built and maintained structured databases and data workflows for insights and reporting. Developed and customized an e-commerce platform using WordPress, including CMS functionality and performance improvements.",
+    "skills": ["Python", "Tableau", "Octoparse", "WordPress", "MySQL"]
+  },
+  {
+    "title": "Web Developer",
+    "company": "Reliance Power Group",
+    "link": false,
+    "employment_type": "Full-time",
+    "start_date": "Jun 2021",
+    "end_date": "Oct 2021",
+    "location": "Kabul, Afghanistan",
+    "description": "Developed an internal management information system using Flask, MySQL, JavaScript, and Bootstrap, focusing on data integrity, maintainability, and scalability. Gathered client requirements, participated in testing and debugging, and supported team members throughout development and delivery.",
+    "skills": ["Python", "Flask", "JavaScript", "MySQL", "Bootstrap", "GitHub"]
+  },
+  {
+    "title": "Web Developer",
+    "company": "Kateb University",
+    "link": false,
+    "employment_type": "Full-time",
+    "start_date": "Jul 2016",
+    "end_date": "Nov 2019",
+    "location": "Kabul, Afghanistan",
+    "description": "Led development and maintenance of university management systems and websites using PHP, Laravel, JavaScript, and MySQL. Translated UI designs and business requirements into responsive web applications, managed deployments, and supervised junior developers through task allocation, testing, debugging, and documentation.",
+    "skills": ["PHP", "Laravel", "JavaScript", "Bootstrap", "MySQL", "GitHub"]
+  },
+  {
+    "title": "Co-organizer / Lead Web Developer",
+    "company": "ICPC Kabul Asia Regional & National Contests",
+    "link": false,
+    "employment_type": "Volunteer",
+    "start_date": "2017",
+    "end_date": "2019",
+    "location": "Kabul, Afghanistan",
+    "description": "Managed technical infrastructure and official websites for multiple programming competitions and related events. Coordinated IT logistics and supported programming training and ACM/ICPC bootcamp sessions for aspiring software engineers.",
+    "skills": ["Network Switches", "PHP", "JavaScript", "HTML", "Web Infrastructure"]
+  }
+]

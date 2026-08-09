@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Hesab Ketab",
+    "date": "Sep 2020 - Present",
+    "description": "The \"Hesab Ketab\" app simplifies monthly electricity and water bill calculation between neighbors and helps keep track of bills in Afghanistan. Utilized Google Flutter Framework as the mobile technology, PHP Laravel as the backend, RestAPI as the medium between client and server, and MySQL for data storage.",
+    "image": "/hesab-ketab.jpg",
+    "technologies": ["Flutter", "PHP Laravel", "RestAPI", "MySQL"],
+    "playstore_link": "https://play.google.com/store/apps/details?id=com.imor.hesab_ketab",
+    "github_link": "",
+    "website_link": "https://hk.imali.dev"
+  },
+  {
+    "title": "PARAS - REFUGEES GUIDE",
+    "date": "Sep 2021 - Sep 2021",
+    "description": "The PARAS - REFUGEES GUIDE app is designed to aid refugees in finding the humanitarian services available to them in their host country. Developed using the Flutter Framework, this app has been localized in five languages, including English, Burmese, Bhutanese, Persian, and Pashto, for easy access and understanding by a wider audience.",
+    "image": "/paras-refugees-guide.jpg",
+    "technologies": ["Flutter"],
+    "playstore_link": "https://play.google.com/store/apps/details?id=com.thepanialliance.app_paras",
+    "github_link": "",
+    "website_link": ""
+  },
+  {
+    "title": "Hair and beauty salon MIS and website",
+    "date": "Sep 2020 - Oct 2020",
+    "description": "The goal of this project was to create an automated solution for beauty and haircut salons, to improve their management processes, and to promote their products. The result was a software solution that streamlined day-to-day operations and provided an effective platform for advertising.",
+    "image": "/hair-and-beauty-salon.jpg",
+    "technologies": ["PHP Laravel", "MySQL", "HTML5", "Bootstrap 4", "AJAX"],
+    "playstore_link": null,
+    "github_link": "",
+    "website_link": ""
+  },
+  {
+    "title": "Corona virus Afghanistan",
+    "date": "Jan 2020 - Mar 2020",
+    "description": "This Project is built to keep track of every corona incident in Afghanistan, and has some predictions ability to predict the covid19 overall in Afghanistan.",
+    "image": "/corona-virus-afghanistan.jpg",
+    "technologies": ["Python Flask", "HTML5", "Bootstrap 4"],
+    "playstore_link": null,
+    "github_link": "",
+    "website_link": ""
+  },
+  {
+    "title": "Silk Hotel Website and booking",
+    "date": "Sep 2015 - Dec 2015",
+    "description": "This is a website for a hotel and it has a room and car booking system.",
+    "image": "/silk-hotel.jpg",
+    "technologies": [],
+    "playstore_link": null,
+    "github_link": "",
+    "website_link": ""
+  }
+]

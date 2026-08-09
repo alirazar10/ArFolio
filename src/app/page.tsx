@@ -1,0 +1,29 @@
+import { Hero, About, Experience, Works, Contact } from "@/components/pages";
+
+export default function Home(): React.ReactElement {
+  return (
+    <div className="xl:max-w-5xl mx-auto">
+      <section
+        id="home"
+        className="min-h-screen xl:max-w-[992px] mx-auto flex items-center my-20 relative"
+      >
+        <Hero />
+      </section>
+      <section id="about" className="min-h-screen py-20">
+        <About />
+      </section>
+      <section id="experience" className="min-h-screen py-20">
+        <Experience />
+      </section>
+      <section id="work" className="min-h-screen py-20">
+        <Works />
+      </section>
+      <section
+        id="contact"
+        className="min-h-screen flex items-center py-20"
+      >
+        <Contact />
+      </section>
+    </div>
+  );
+}
